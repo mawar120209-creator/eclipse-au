@@ -2,1010 +2,289 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#100b18">
-<title>ECLIPSE AU — Multiverse</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171329">
+<title>ECLIPSE AU — Infinite Universes</title>
 <style>
 :root {
-  --bg:#100b18;
-  --panel:#1d1428;
-  --text:#f7efff;
-  --muted:#b9a9ca;
-  --accent:#b69aff;
-  --border:#49365f;
+  --bg:#100e1c;--panel:#1c1930;--panel2:#26213e;
+  --text:#f5f0ff;--muted:#b7adc9;--accent:#c6a6ff;
+  --line:#39304e;--danger:#ff9aab;
 }
-* { box-sizing:border-box; }
-body {
-  margin:0;
-  font-family:system-ui,-apple-system,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  min-height:100vh;
-  transition:background .25s,color .25s;
-}
-button,input,textarea,select { font:inherit; }
-button {
-  cursor:pointer;
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:11px 14px;
-  background:var(--panel);
-  color:var(--text);
-}
-button:hover { filter:brightness(1.15); }
-input,textarea,select {
-  width:100%;
-  padding:12px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:var(--bg);
-  color:var(--text);
-  margin:6px 0 12px;
-}
-textarea { min-height:110px; resize:vertical; }
-label { color:var(--muted); font-size:14px; }
-header {
-  position:sticky;
-  top:0;
-  z-index:5;
-  background:var(--bg);
-  border-bottom:1px solid var(--border);
-  padding:14px 18px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-}
-.logo {
-  font-weight:900;
-  letter-spacing:2px;
-  color:var(--accent);
-}
-header small { color:var(--muted); }
-.layout {
-  display:grid;
-  grid-template-columns:210px minmax(0,1fr);
-  max-width:1200px;
-  margin:auto;
-  min-height:calc(100vh - 65px);
-}
-nav {
-  padding:18px 12px;
-  border-right:1px solid var(--border);
-}
-.nav-button {
-  display:block;
-  width:100%;
-  text-align:left;
-  margin-bottom:8px;
-  border-color:transparent;
-}
-.nav-button.active {
-  background:var(--accent);
-  color:var(--bg);
-  font-weight:bold;
-}
-main { padding:22px; min-width:0; }
-.hero {
-  padding:30px 22px;
-  border:1px solid var(--border);
-  border-radius:22px;
-  background:linear-gradient(140deg,var(--panel),var(--bg));
-  margin-bottom:22px;
-}
-.hero h1 { font-size:clamp(28px,6vw,46px); margin:8px 0; }
-.hero p { color:var(--muted); line-height:1.7; }
-.eyebrow {
-  text-transform:uppercase;
-  letter-spacing:3px;
-  color:var(--accent);
-  font-size:12px;
-}
-.grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:12px;
-}
-.card {
-  padding:17px;
-  border:1px solid var(--border);
-  border-radius:16px;
-  background:var(--panel);
-  min-width:0;
-}
-.card h3 { margin:5px 0 8px; }
-.card p { color:var(--muted); font-size:14px; line-height:1.6; }
-.card-icon { font-size:27px; }
-.section { display:none; }
-.section.active { display:block; }
-.section-title { margin-top:0; }
-.row {
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  align-items:center;
-}
-.primary {
-  background:var(--accent);
-  color:var(--bg);
-  font-weight:bold;
-  border-color:var(--accent);
-}
-.secondary { background:transparent; }
-.item {
-  padding:13px;
-  border:1px solid var(--border);
-  border-radius:12px;
-  margin:10px 0;
-  overflow-wrap:anywhere;
-}
-.item p { white-space:pre-wrap; }
-.item small { color:var(--muted); }
-.empty { color:var(--muted); padding:18px 0; }
-.note {
-  font-size:13px;
-  color:var(--muted);
-  line-height:1.7;
-}
-footer {
-  text-align:center;
-  color:var(--muted);
-  font-size:12px;
-  padding:24px 10px;
-}
-@media(max-width:650px) {
-  .layout { display:block; }
-  nav {
-    display:flex;
-    overflow-x:auto;
-    gap:7px;
-    padding:10px;
-    border-right:0;
-    border-bottom:1px solid var(--border);
-  }
-  .nav-button {
-    display:inline-block;
-    width:auto;
-    white-space:nowrap;
-    margin:0;
-    padding:10px 12px;
-  }
-  main { padding:15px; }
-  header { padding:12px; }
-  .grid { grid-template-columns:1fr; }
-  .hero { padding:23px 17px; }
-}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+font-family:system-ui,-apple-system,sans-serif;line-height:1.6}
+header{padding:22px 16px;background:linear-gradient(135deg,#292047,#171329);
+border-bottom:1px solid var(--line)}
+.brand{font-size:24px;font-weight:800;letter-spacing:2px}
+header p{margin:3px 0;color:var(--muted);font-size:13px}
+nav{display:flex;gap:8px;overflow-x:auto;padding:12px;
+background:var(--bg);position:sticky;top:0;z-index:5;
+border-bottom:1px solid var(--line)}
+nav button{white-space:nowrap;border:1px solid var(--line);
+background:var(--panel);color:var(--text);padding:9px 13px;
+border-radius:12px;font-size:13px}
+nav button.active,button.primary{background:var(--accent);color:#211533;
+border-color:var(--accent);font-weight:700}
+main{max-width:950px;margin:auto;padding:18px 14px 50px}
+.view{display:none}.view.active{display:block}
+h1{font-size:27px;margin:0 0 5px}
+h2{font-size:19px;margin-top:0}
+.subtitle,.muted{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px}
+.card{background:var(--panel);border:1px solid var(--line);
+border-radius:17px;padding:16px;margin:12px 0}
+.card h3{margin:0 0 5px}
+button{cursor:pointer;border:1px solid var(--line);border-radius:10px;
+padding:10px 13px;background:var(--panel2);color:var(--text);font:inherit}
+button:active{transform:scale(.98)}
+input,textarea,select{display:block;width:100%;margin:6px 0 13px;
+padding:12px;background:#100e1c;color:var(--text);
+border:1px solid var(--line);border-radius:10px;font:inherit}
+textarea{min-height:105px;resize:vertical}
+label{font-size:13px;color:var(--muted)}
+form{margin-top:14px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.item{padding:13px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.item:last-child{border-bottom:0}
+.item img,.preview{width:100%;max-height:260px;object-fit:cover;
+border-radius:12px;margin-top:8px}
+.badge{display:inline-block;background:var(--panel2);padding:3px 9px;
+border-radius:20px;color:var(--accent);font-size:12px}
+.empty{padding:20px;text-align:center;color:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+body.light{--bg:#f7f3ff;--panel:#fff;--panel2:#eee5ff;
+--text:#29213b;--muted:#6f657e;--accent:#bca0f5;--line:#e0d5f0}
+body.light input,body.light textarea,body.light select{background:#fff;color:#29213b}
 </style>
 </head>
-<!-- ECLIPSE AU GALLERY -->
-<section id="eclipse-gallery" style="
-  max-width:1000px;
-  margin:30px auto;
-  padding:20px;
-  border-radius:20px;
-  background:#171326;
-  color:#f4efff;
-  font-family:Arial,sans-serif;
-">
-  <h2>🌌 ECLIPSE AU Gallery</h2>
-  <p>Simpan gambar karakter, sampul AU, dan dunia fantasi milikmu.</p>
-
-  <label for="eclipseAlbum">Nama album / AU</label>
-  <input id="eclipseAlbum"
-    type="text"
-    placeholder="Contoh: Royal Fantasy AU"
-    style="display:block;width:100%;box-sizing:border-box;padding:12px;margin:8px 0 16px;border-radius:10px;">
-
-  <label for="eclipseImages">Pilih foto dari HP</label>
-  <input id="eclipseImages"
-    type="file"
-    accept="image/*"
-    multiple
-    style="display:block;width:100%;margin:12px 0;">
-
-  <button id="eclipseUpload" type="button"
-    style="padding:12px 18px;border:0;border-radius:10px;background:#9b70ff;color:white;font-weight:bold;">
-    ✨ Simpan Foto
-  </button>
-
-  <p id="eclipseStatus" role="status" aria-live="polite"></p>
-
-  <hr style="border-color:#49405f;margin:24px 0;">
-
-  <h3>📚 Album Gambarku</h3>
-
-  <select id="eclipseFilter"
-    aria-label="Pilih album"
-    style="width:100%;padding:12px;border-radius:10px;margin-bottom:16px;">
-    <option value="">Semua album</option>
-  </select>
-
-  <div id="eclipsePhotoGrid" style="
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(135px,1fr));
-    gap:12px;
-  "></div>
-</section>
-
-<style>
-#eclipse-gallery input,
-#eclipse-gallery select,
-#eclipse-gallery button {
-  font-size:15px;
-}
-#eclipse-gallery img {
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  border-radius:12px;
-  display:block;
-}
-#eclipse-gallery .eclipse-card {
-  background:#28203c;
-  padding:9px;
-  border-radius:14px;
-  overflow-wrap:anywhere;
-}
-#eclipse-gallery .eclipse-card button {
-  padding:7px;
-  margin-top:7px;
-  border:0;
-  border-radius:7px;
-  cursor:pointer;
-}
-#eclipse-gallery .eclipse-card a {
-  display:inline-block;
-  margin-top:7px;
-  color:#d8c5ff;
-}
-</style>
-
-<script>
-(function () {
-  const DB_NAME = "EclipseAUGallery";
-  const STORE = "photos";
-  let db;
-  let currentUrls = [];
-
-  const albumInput = document.getElementById("eclipseAlbum");
-  const fileInput = document.getElementById("eclipseImages");
-  const uploadBtn = document.getElementById("eclipseUpload");
-  const status = document.getElementById("eclipseStatus");
-  const filter = document.getElementById("eclipseFilter");
-  const grid = document.getElementById("eclipsePhotoGrid");
-
-  function openDB() {
-    return new Promise((resolve, reject) => {
-      const request = indexedDB.open(DB_NAME, 1);
-
-      request.onupgradeneeded = () => {
-        const database = request.result;
-        if (!database.objectStoreNames.contains(STORE)) {
-          database.createObjectStore(STORE, {
-            keyPath: "id",
-            autoIncrement: true
-          });
-        }
-      };
-
-      request.onsuccess = () => resolve(request.result);
-      request.onerror = () => reject(request.error);
-    });
-  }
-
-  function getAllPhotos() {
-    return new Promise((resolve, reject) => {
-      const request = db.transaction(STORE, "readonly")
-        .objectStore(STORE).getAll();
-
-      request.onsuccess = () => resolve(request.result);
-      request.onerror = () => reject(request.error);
-    });
-  }
-
-  function savePhoto(photo) {
-    return new Promise((resolve, reject) => {
-      const request = db.transaction(STORE, "readwrite")
-        .objectStore(STORE).add(photo);
-
-      request.onsuccess = () => resolve();
-      request.onerror = () => reject(request.error);
-    });
-  }
-
-  function deletePhoto(id) {
-    return new Promise((resolve, reject) => {
-      const request = db.transaction(STORE, "readwrite")
-        .objectStore(STORE).delete(id);
-
-      request.onsuccess = () => resolve();
-      request.onerror = () => reject(request.error);
-    });
-  }
-
-  function escapeHTML(value) {
-    return String(value).replace(/[&<>"']/g, char => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;"
-    })[char]);
-  }
-
-  async function renderGallery() {
-    currentUrls.forEach(url => URL.revokeObjectURL(url));
-    currentUrls = [];
-    grid.replaceChildren();
-
-    const photos = await getAllPhotos();
-    const albums = [...new Set(photos.map(p => p.album))].sort();
-    const selected = filter.value;
-
-    filter.replaceChildren(new Option("Semua album", ""));
-    albums.forEach(album => {
-      filter.add(new Option(album, album));
-    });
-
-    filter.value = selected;
-
-    const visible = selected
-      ? photos.filter(photo => photo.album === selected)
-      : photos;
-
-    if (!visible.length) {
-      grid.textContent = "Belum ada foto di album ini. Yuk, tambahkan gambar!";
-      return;
-    }
-
-    visible.forEach(photo => {
-      const card = document.createElement("div");
-      card.className = "eclipse-card";
-
-      const image = document.createElement("img");
-      image.alt = photo.name;
-      image.src = URL.createObjectURL(photo.blob);
-      currentUrls.push(image.src);
-
-      const title = document.createElement("p");
-      title.textContent = photo.name;
-      title.style.fontSize = "13px";
-
-      const album = document.createElement("small");
-      album.textContent = "📁 " + photo.album;
-
-      const download = document.createElement("a");
-      download.href = image.src;
-      download.download = photo.name;
-      download.textContent = "⬇️ Unduh";
-
-      const remove = document.createElement("button");
-      remove.type = "button";
-      remove.textContent = "🗑️ Hapus";
-
-      remove.addEventListener("click", async () => {
-        if (!confirm("Hapus foto ini dari galeri?")) return;
-
-        try {
-          await deletePhoto(photo.id);
-          status.textContent = "Foto berhasil dihapus.";
-          await renderGallery();
-        } catch (error) {
-          status.textContent = "Foto gagal dihapus.";
-        }
-      });
-
-      card.append(image, title, album, document.createElement("br"),
-        download, document.createElement("br"), remove);
-
-      grid.appendChild(card);
-    });
-  }
-
-  uploadBtn.addEventListener("click", async () => {
-    const files = [...fileInput.files];
-    const album = albumInput.value.trim() || "Album Tanpa Nama";
-
-    if (!files.length) {
-      status.textContent = "Pilih foto terlebih dahulu.";
-      return;
-    }
-
-    const images = files.filter(file => file.type.startsWith("image/"));
-
-    if (!images.length) {
-      status.textContent = "Pilih file gambar yang valid.";
-      return;
-    }
-
-    uploadBtn.disabled = true;
-
-    try {
-      for (const file of images) {
-        await savePhoto({
-          name: file.name,
-          album: album,
-          blob: file,
-          savedAt: Date.now()
-        });
-      }
-
-      fileInput.value = "";
-      filter.value = "";
-      status.textContent = images.length + " foto berhasil disimpan!";
-      await renderGallery();
-    } catch (error) {
-      status.textContent =
-        "Penyimpanan gagal. Ruang browser mungkin tidak cukup.";
-    } finally {
-      uploadBtn.disabled = false;
-    }
-  });
-
-  filter.addEventListener("change", renderGallery);
-
-  openDB()
-    .then(database => {
-      db = database;
-      return renderGallery();
-    })
-    .catch(() => {
-      status.textContent =
-        "Galeri tidak dapat dibuka di browser ini.";
-    });
-})();
-                       </script>
 <body>
 <header>
-  <div>
-    <div class="logo">☾ ECLIPSE AU</div>
-    <small>Your imagination. Infinite universes.</small>
-  </div>
-  <button onclick="showSection('settings')">⚙️</button>
+  <div class="brand">☾ ECLIPSE AU</div>
+  <p>Your imagination. Infinite universes.</p>
+  <p>Tempat karakter, cerita, dan dunia alternatifmu berkumpul.</p>
 </header>
 
-<div class="layout">
 <nav id="navigation">
-  <button class="nav-button active" data-page="home" onclick="showSection('home')">🏠 Beranda</button>
-  <button class="nav-button" data-page="characters" onclick="showSection('characters')">👤 Characters</button>
-  <button class="nav-button" data-page="worlds" onclick="showSection('worlds')">🌍 AU Worlds</button>
-  <button class="nav-button" data-page="stories" onclick="showSection('stories')">✍️ Story Studio</button>
-  <button class="nav-button" data-page="chat" onclick="showSection('chat')">💬 Character Chat</button>
-  <button class="nav-button" data-page="roleplay" onclick="showSection('roleplay')">🎭 Roleplay</button>
-  <button class="nav-button" data-page="media" onclick="showSection('media')">🖼️ Media Studio</button>
-  <button class="nav-button" data-page="settings" onclick="showSection('settings')">⚙️ Pengaturan</button>
+  <button class="active" data-page="home">🏠 Beranda</button>
+  <button data-page="characters">👤 Characters</button>
+  <button data-page="worlds">🌌 AU Worlds</button>
+  <button data-page="stories">✍️ Story Studio</button>
+  <button data-page="chat">💬 Character Chat</button>
+  <button data-page="roleplay">🎭 Roleplay</button>
+  <button data-page="media">🖼️ Media Studio</button>
+  <button data-page="settings">⚙️ Pengaturan</button>
 </nav>
 
 <main>
-<section class="section active" id="home">
-  <div class="hero">
-    <div class="eyebrow">Your personal creative universe</div>
-    <h1>Welcome to<br>ECLIPSE AU ✦</h1>
-    <p>
-      Ciptakan karakter, bangun dunia alternatif, tulis kisah,
-      dan jelajahi berbagai kemungkinan cerita dalam satu tempat.
-    </p>
-    <div class="row">
-      <button class="primary" onclick="showSection('characters')">＋ Buat Karakter</button>
-      <button onclick="showSection('stories')">✍️ Mulai Cerita</button>
-    </div>
-  </div>
-
-  <h2>✦ Creative Studio</h2>
+<section class="view active" id="home">
+  <h1>Welcome to ECLIPSE AU ✨</h1>
+  <p class="subtitle">Setiap karakter punya cerita. Setiap cerita punya semesta.</p>
   <div class="grid">
-    <div class="card" onclick="showSection('characters')">
-      <div class="card-icon">👤</div>
-      <h3>Character Studio</h3>
-      <p>Ciptakan tokoh, kepribadian, penampilan, dan latar belakang.</p>
-      <button>Buka Studio →</button>
-    </div>
-    <div class="card" onclick="showSection('worlds')">
-      <div class="card-icon">🌌</div>
-      <h3>AU World Builder</h3>
-      <p>Bangun dunia fantasi, kerajaan, sekolah, atau multiverse.</p>
-      <button>Buat Dunia →</button>
-    </div>
-    <div class="card" onclick="showSection('stories')">
-      <div class="card-icon">📖</div>
-      <h3>Story Studio</h3>
-      <p>Simpan ide, alur, dialog, dan bab ceritamu.</p>
-      <button>Tulis Cerita →</button>
-    </div>
-    <div class="card" onclick="showSection('chat')">
-      <div class="card-icon">💬</div>
-      <h3>Character Chat</h3>
-      <p>Siapkan percakapan bersama karakter buatanmu.</p>
-      <button>Buka Chat →</button>
-    </div>
-    <div class="card" onclick="showSection('roleplay')">
-      <div class="card-icon">🎭</div>
-      <h3>Interactive Roleplay</h3>
-      <p>Simpan adegan dan lanjutkan petualangan roleplay.</p>
-      <button>Mulai Roleplay →</button>
-    </div>
-    <div class="card" onclick="showSection('media')">
-      <div class="card-icon">🖼️</div>
-      <h3>Media Studio</h3>
-      <p>Pilih gambar, musik, audio, dan video untuk proyekmu.</p>
-      <button>Buka Media →</button>
-    </div>
+    <div class="card"><h3>👤 Character Library</h3><p class="muted">Buat profil dan simpan gambar karakter.</p><button onclick="go('characters')">Buka Characters</button></div>
+    <div class="card"><h3>🌌 AU Worlds</h3><p class="muted">Bangun semesta alternatifmu.</p><button onclick="go('worlds')">Buka AU Worlds</button></div>
+    <div class="card"><h3>✍️ Story Studio</h3><p class="muted">Tulis dan simpan cerita.</p><button onclick="go('stories')">Tulis Cerita</button></div>
+    <div class="card"><h3>🖼️ Media Studio</h3><p class="muted">Kumpulkan gambar dan sampul AU.</p><button onclick="go('media')">Buka Galeri</button></div>
   </div>
-  <p class="note">Karya tersimpan di browser perangkat ini. Buat cadangan secara berkala.</p>
+  <div class="card"><h2>🌙 Karya Terbaru</h2><div id="recent" class="empty">Belum ada karya. Mulailah membuat sesuatu!</div></div>
 </section>
 
-<section class="section" id="characters">
-  <h2 class="section-title">👤 Character Studio</h2>
-  <p class="note">Buat karakter orisinal untuk dunia AU-mu.</p>
+<section class="view" id="characters">
+  <h1>👤 Character Library</h1><p class="subtitle">Buat dan simpan profil karakter originalmu.</p>
   <form id="characterForm">
-    <label>Nama karakter</label>
-    <input id="charName" required placeholder="Contoh: Alya">
-    <label>Usia</label>
-    <input id="charAge" placeholder="Contoh: 22 tahun">
-    <label>MBTI atau kepribadian</label>
-    <input id="charType" placeholder="Contoh: INFJ">
-    <label>Penampilan</label>
-    <textarea id="charAppearance" placeholder="Rambut, mata, pakaian, ciri khas..."></textarea>
-    <label>Latar belakang dan sifat</label>
-    <textarea id="charBio" placeholder="Siapa dia? Apa tujuan dan rahasianya?"></textarea>
-    <button class="primary" type="submit">＋ Simpan Karakter</button>
+    <label>Nama karakter</label><input name="name" required placeholder="Contoh: Alya">
+    <label>MBTI / kepribadian</label><input name="type" placeholder="Contoh: INFJ">
+    <label>Usia</label><input name="age" placeholder="Contoh: 22">
+    <label>Peran / penampilan / latar belakang</label><textarea name="description" placeholder="Ceritakan tentang karaktermu..."></textarea>
+    <label>Foto karakter (opsional)</label><input name="image" type="file" accept="image/*">
+    <button class="primary">Simpan Karakter</button>
   </form>
-  <h3>Karakterku</h3>
-  <div id="characterList"></div>
+  <div class="card"><h2>Karakterku</h2><div id="characterList"></div></div>
 </section>
 
-<section class="section" id="worlds">
-  <h2 class="section-title">🌍 AU World Builder</h2>
+<section class="view" id="worlds">
+  <h1>🌌 AU Worlds</h1><p class="subtitle">Ciptakan dunia alternatif dengan aturan dan suasananya sendiri.</p>
   <form id="worldForm">
-    <label>Nama dunia AU</label>
-    <input id="worldName" required placeholder="Contoh: Eclipse Kingdom">
-    <label>Genre</label>
-    <select id="worldGenre">
-      <option>Fantasy</option>
-      <option>Dark Fantasy</option>
-      <option>Romance</option>
-      <option>Modern AU</option>
-      <option>Historical AU</option>
-      <option>Royal Chinese Fantasy</option>
-      <option>Zombie Apocalypse</option>
-      <option>Sci-Fi</option>
-    </select>
-    <label>Deskripsi dunia</label>
-    <textarea id="worldDesc" placeholder="Jelaskan dunia, aturan, konflik, dan sejarahnya..."></textarea>
-    <button class="primary" type="submit">＋ Simpan Dunia</button>
+    <label>Nama AU</label><input name="name" required placeholder="Contoh: Royal Fantasy AU">
+    <label>Genre</label><input name="genre" placeholder="Fantasy, romance, mystery...">
+    <label>Deskripsi dunia</label><textarea name="description" placeholder="Latar, aturan, konflik, dan sejarah dunia..."></textarea>
+    <label>Sampul AU (opsional)</label><input name="image" type="file" accept="image/*">
+    <button class="primary">Simpan AU</button>
   </form>
-  <h3>Dunia yang Kubuat</h3>
-  <div id="worldList"></div>
+  <div class="card"><h2>Semesta Milikku</h2><div id="worldList"></div></div>
 </section>
 
-<section class="section" id="stories">
-  <h2 class="section-title">✍️ Story Studio</h2>
+<section class="view" id="stories">
+  <h1>✍️ Story Studio</h1><p class="subtitle">Tempat menulis novel, fanfiction, dan cerita pendek.</p>
   <form id="storyForm">
-    <label>Judul cerita</label>
-    <input id="storyTitle" required placeholder="Judul AU atau bab">
-    <label>Nama dunia (opsional)</label>
-    <input id="storyWorld" placeholder="Nama dunia AU">
-    <label>Isi cerita</label>
-    <textarea id="storyContent" required style="min-height:220px" placeholder="Tuliskan adegan, narasi, dialog, atau ide ceritamu..."></textarea>
-    <button class="primary" type="submit">＋ Simpan Cerita</button>
+    <label>Judul cerita</label><input name="title" required placeholder="Judul ceritamu">
+    <label>Nama AU (opsional)</label><input name="world" placeholder="Nama semesta">
+    <label>Isi cerita</label><textarea name="content" required style="min-height:200px" placeholder="Mulai menulis di sini..."></textarea>
+    <button class="primary">Simpan Cerita</button>
   </form>
-  <h3>Arsip Cerita</h3>
-  <div id="storyList"></div>
+  <div class="card"><h2>Naskahku</h2><div id="storyList"></div></div>
 </section>
 
-<section class="section" id="chat">
-  <h2 class="section-title">💬 AI Character Chat</h2>
+<section class="view" id="chat">
+  <h1>💬 Character Chat</h1>
+  <p class="subtitle">Rancang percakapan karakter dan simpan prompt untuk digunakan di layanan AI pilihanmu.</p>
   <div class="card">
-    <p>Ruang persiapan percakapan karakter.</p>
-    <label>Pilih karakter</label>
-    <select id="chatCharacter"></select>
-    <label>Pesan atau adegan yang ingin kamu mulai</label>
-    <textarea id="chatPrompt" placeholder="Contoh: Aku menatapnya lalu bertanya, 'Apa yang sebenarnya terjadi?'"></textarea>
-    <button class="primary" onclick="saveChatPrompt()">Simpan Adegan</button>
-    <p class="note">Versi ini belum terhubung ke model AI. Tombol simpan hanya menyimpan adeganmu, bukan menghasilkan balasan AI.</p>
+    <label>Nama karakter</label><input id="chatName" placeholder="Nama karakter">
+    <label>Kepribadian karakter</label><textarea id="chatPersonality" placeholder="Sifat, cara bicara, latar belakang..."></textarea>
+    <label>Pesan / situasi</label><textarea id="chatMessage" placeholder="Apa yang ingin kamu katakan atau adegan yang ingin dimainkan?"></textarea>
+    <div class="actions"><button class="primary" onclick="makePrompt()">Buat Prompt</button><button onclick="copyPrompt()">Salin Prompt</button></div>
+    <label>Prompt hasil</label><textarea id="chatOutput" placeholder="Prompt akan muncul di sini..."></textarea>
   </div>
-  <h3>Adegan Chat Tersimpan</h3>
-  <div id="chatList"></div>
+  <p class="muted">Catatan: ini belum menjadi percakapan AI langsung. Untuk memperoleh balasan AI, prompt perlu digunakan pada layanan AI yang mendukungnya.</p>
 </section>
 
-<section class="section" id="roleplay">
-  <h2 class="section-title">🎭 Interactive Roleplay</h2>
-  <form id="roleplayForm">
-    <label>Judul roleplay</label>
-    <input id="rpTitle" required placeholder="Contoh: The Last Haven">
-    <label>Karakter yang terlibat</label>
-    <input id="rpCharacters" placeholder="Pisahkan nama dengan koma">
-    <label>Adegan terakhir</label>
-    <textarea id="rpScene" required placeholder="Tuliskan aksi, dialog, dan posisi terakhir setiap karakter..."></textarea>
-    <button class="primary" type="submit">＋ Simpan Roleplay</button>
+<section class="view" id="roleplay">
+  <h1>🎭 Roleplay Studio</h1><p class="subtitle">Simpan adegan dan lanjutkan roleplay kapan saja.</p>
+  <form id="rpForm">
+    <label>Judul adegan</label><input name="title" required placeholder="Contoh: Pertemuan di bawah gerhana">
+    <label>Karakter yang terlibat</label><input name="characters" placeholder="Nama karakter">
+    <label>Lokasi / suasana</label><input name="setting" placeholder="Lokasi dan suasana">
+    <label>Adegan / dialog</label><textarea name="content" required placeholder="Tulis aksi, narasi, atau dialog..."></textarea>
+    <button class="primary">Simpan Adegan</button>
   </form>
-  <h3>Roleplay-ku</h3>
-  <div id="roleplayList"></div>
+  <div class="card"><h2>Adegan Tersimpan</h2><div id="rpList"></div></div>
 </section>
 
-<section class="section" id="media">
-  <h2 class="section-title">🖼️ Media Studio</h2>
-  <p class="note">Pilih media dari perangkatmu. File besar dapat memenuhi ruang penyimpanan browser.</p>
-  <label>Pilih gambar, audio, atau video</label>
-  <input id="mediaFiles" type="file" accept="image/*,audio/*,video/*" multiple>
-  <div id="mediaPreview" class="grid"></div>
-  <p class="note">Pratinjau media hanya tersedia selama halaman terbuka. Unggahan belum tersinkronisasi ke akun atau cloud.</p>
-</section>
-
-<section class="section" id="settings">
-  <h2 class="section-title">⚙️ Pengaturan</h2>
-  <div class="card">
-    <h3>🎨 Pilih Tema</h3>
-    <p>Ganti suasana visual ECLIPSE AU kapan saja.</p>
-    <div class="grid">
-      <button onclick="setTheme('eclipse')">🌌 Eclipse Aesthetic</button>
-      <button onclick="setTheme('dark')">🖤 Dark Fantasy</button>
-      <button onclick="setTheme('anime')">🌸 Anime Aesthetic</button>
-      <button onclick="setTheme('royal')">👑 Royal Chinese Fantasy</button>
-    </div>
+<section class="view" id="media">
+  <h1>🖼️ Media Studio</h1><p class="subtitle">Galeri terpadu untuk foto karakter, sampul AU, dan latar fantasi.</p>
+  <form id="mediaForm">
+    <label>Nama gambar</label><input name="name" required placeholder="Contoh: Alya — Royal Outfit">
+    <label>Kategori</label><select name="category"><option>Karakter</option><option>Sampul AU</option><option>Latar Fantasi</option><option>Referensi</option><option>Lainnya</option></select>
+    <label>Pilih gambar dari HP</label><input name="image" type="file" accept="image/*" required>
+    <button class="primary">Simpan ke Galeri</button>
+  </form>
+  <div class="card"><h2>Galeri Gambarku</h2>
+    <label>Filter kategori</label><select id="mediaFilter"><option value="">Semua kategori</option><option>Karakter</option><option>Sampul AU</option><option>Latar Fantasi</option><option>Referensi</option><option>Lainnya</option></select>
+    <div id="mediaList"></div>
   </div>
-  <div class="card" style="margin-top:15px">
-    <h3>💾 Cadangan Data</h3>
-    <p>Ekspor karya ke file JSON agar bisa disimpan atau dipindahkan.</p>
-    <button class="primary" onclick="exportData()">Ekspor Data</button>
-    <p>Impor cadangan JSON dari perangkat.</p>
-    <input type="file" id="importFile" accept=".json,application/json">
-    <button onclick="importData()">Impor Data</button>
-  </div>
-  <div class="card" style="margin-top:15px">
-    <h3>ℹ️ Tentang ECLIPSE AU</h3>
-    <p>Studio kreatif untuk AU, karakter, dunia, cerita, dan roleplay.</p>
-    <p class="note">Versi awal. AI, akun, sinkronisasi cloud, dan tautan berbagi belum diaktifkan.</p>
+  <div class="card"><h2>🎨 AI Image Creator — Prompt Studio</h2>
+    <p class="muted">Susun deskripsi gambar AI. Pembuatan gambar belum terhubung ke model AI.</p>
+    <label>Subjek gambar</label><input id="aiSubject" placeholder="Contoh: karakter perempuan kerajaan">
+    <label>Gaya seni</label><select id="aiStyle"><option>Anime illustration</option><option>Chinese traditional painting</option><option>Fantasy digital art</option><option>Realistic portrait</option><option>Webtoon style</option></select>
+    <label>Detail tambahan</label><textarea id="aiDetail" placeholder="Warna pakaian, rambut, latar, pencahayaan..."></textarea>
+    <button class="primary" onclick="buildAI()">Susun Prompt Gambar</button>
+    <textarea id="aiOutput" placeholder="Prompt gambar akan muncul di sini..."></textarea>
+    <button onclick="copyAI()">Salin Prompt</button>
   </div>
 </section>
 
-<footer>ECLIPSE AU · Your imagination, infinite universes ✦</footer>
+<section class="view" id="settings">
+  <h1>⚙️ Pengaturan</h1><p class="subtitle">Atur tampilan dan kelola karya tersimpan.</p>
+  <div class="card"><h2>Tampilan</h2><button onclick="toggleTheme()">🌗 Ganti tema terang/gelap</button></div>
+  <div class="card"><h2>Cadangkan data</h2><p class="muted">Ekspor data sebagai JSON agar dapat disimpan sebagai cadangan.</p>
+    <button class="primary" onclick="exportData()">Ekspor semua data</button>
+    <label style="display:block;margin-top:18px">Impor cadangan JSON</label><input type="file" id="importFile" accept=".json,application/json">
+    <button onclick="importData()">Impor data</button>
+  </div>
+  <div class="card"><h2>Hapus data</h2><p class="muted">Tindakan ini menghapus seluruh karya ECLIPSE AU yang tersimpan pada browser ini.</p><button onclick="clearData()" style="color:var(--danger)">Hapus semua data lokal</button></div>
+  <p class="muted">Data disimpan di browser perangkat ini. Menghapus data browser, berpindah perangkat, atau menggunakan browser lain dapat membuat data tidak tersedia. Ekspor cadangan secara berkala.</p>
+</section>
 </main>
-</div>
+<footer>☾ ECLIPSE AU · Your imagination, infinite universes.</footer>
 
 <script>
-const STORE_KEY = "eclipse_au_data_v1";
+const KEY='eclipse_au_v3';
+const defaults={characters:[],worlds:[],stories:[],roleplays:[],media:[],theme:'dark'};
+let data=loadData();
 
-const defaults = {
-  theme: "eclipse",
-  characters: [],
-  worlds: [],
-  stories: [],
-  chats: [],
-  roleplays: []
-};
-
-let data = loadData();
-
-function loadData() {
-  try {
-    const saved = JSON.parse(localStorage.getItem(STORE_KEY));
-    return saved ? {...defaults, ...saved} : {...defaults};
-  } catch {
-    return {...defaults};
-  }
+function loadData(){
+ try{return {...defaults,...JSON.parse(localStorage.getItem(KEY)||'{}')}}
+ catch(e){return {...defaults}}
 }
-
-function saveData() {
-  try {
-    localStorage.setItem(STORE_KEY, JSON.stringify(data));
-    return true;
-  } catch (error) {
-    alert("Penyimpanan browser penuh atau tidak tersedia. Ekspor data sebagai cadangan.");
-    return false;
-  }
+function saveData(){try{localStorage.setItem(KEY,JSON.stringify(data))}
+catch(e){alert('Penyimpanan browser penuh. Coba kurangi ukuran gambar atau ekspor data lalu hapus beberapa gambar.');}}
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function go(page){
+ document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===page));
+ document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));
+ window.scrollTo({top:0,behavior:'smooth'});
 }
-
-function escapeHTML(value) {
-  return String(value ?? "").replace(/[&<>"']/g, char => ({
-    "&":"&amp;",
-    "<":"&lt;",
-    ">":"&gt;",
-    '"':"&quot;",
-    "'":"&#39;"
-  })[char]);
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+function imageFrom(file){return new Promise((resolve,reject)=>{
+ if(!file){resolve('');return;}
+ const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file);
+});}
+function addForm(id,collection,build){
+ document.getElementById(id).addEventListener('submit',async e=>{
+ e.preventDefault();const f=e.currentTarget;const fd=new FormData(f);
+ try{
+ const item=await build(fd);
+ data[collection].unshift({id:Date.now(),...item});
+ saveData();f.reset();renderAll();alert('Berhasil disimpan!');
+ }catch(err){alert('Tidak berhasil menyimpan. Ukuran gambar mungkin terlalu besar. Coba gambar yang lebih kecil.');}
+ });
 }
-
-function showSection(id) {
-  document.querySelectorAll(".section").forEach(section => {
-    section.classList.toggle("active", section.id === id);
-  });
-
-  document.querySelectorAll(".nav-button").forEach(button => {
-    button.classList.toggle("active", button.dataset.page === id);
-  });
-
-  window.scrollTo({top:0, behavior:"smooth"});
+addForm('characterForm','characters',async f=>({name:f.get('name'),type:f.get('type'),age:f.get('age'),description:f.get('description'),image:await imageFrom(f.get('image'))}));
+addForm('worldForm','worlds',async f=>({name:f.get('name'),genre:f.get('genre'),description:f.get('description'),image:await imageFrom(f.get('image'))}));
+addForm('storyForm','stories',async f=>({title:f.get('title'),world:f.get('world'),content:f.get('content')}));
+addForm('rpForm','roleplays',async f=>({title:f.get('title'),characters:f.get('characters'),setting:f.get('setting'),content:f.get('content')}));
+addForm('mediaForm','media',async f=>({name:f.get('name'),category:f.get('category'),image:await imageFrom(f.get('image'))}));
+function removeItem(collection,id){
+ if(!confirm('Hapus karya ini?'))return;
+ data[collection]=data[collection].filter(x=>x.id!==id);saveData();renderAll();
 }
-
-const themes = {
-  eclipse: {
-    bg:"#100b18", panel:"#1d1428", text:"#f7efff",
-    muted:"#b9a9ca", accent:"#b69aff", border:"#49365f"
-  },
-  dark: {
-    bg:"#100b0e", panel:"#25151d", text:"#fff0f3",
-    muted:"#d1aeb8", accent:"#df789b", border:"#633248"
-  },
-  anime: {
-    bg:"#fff5fb", panel:"#ffffff", text:"#49384e",
-    muted:"#8d778f", accent:"#d78fc7", border:"#edc8e6"
-  },
-  royal: {
-    bg:"#230c1c", panel:"#391224", text:"#fff0d1",
-    muted:"#dfc4bd", accent:"#e9bd62", border:"#8d4c54"
-  }
-};
-
-function setTheme(name) {
-  if (!themes[name]) return;
-  data.theme = name;
-  const theme = themes[name];
-
-  Object.entries(theme).forEach(([key,value]) => {
-    document.documentElement.style.setProperty("--" + key, value);
-  });
-
-  saveData();
+function cardItem(x,collection,fields){
+ return `<div class="item"><strong>${esc(x.name||x.title)}</strong>
+ ${x.type?`<span class="badge">${esc(x.type)}</span>`:''}
+ ${fields.map(k=>x[k]?`<p>${esc(x[k])}</p>`:'').join('')}
+ ${x.image?`<img loading="lazy" src="${x.image}" alt="${esc(x.name||x.title)}">`:''}
+ <div class="actions"><button onclick="removeItem('${collection}',${x.id})">Hapus</button></div></div>`;
 }
-
-function makeItem(title, details, onDelete) {
-  const div = document.createElement("div");
-  div.className = "item";
-
-  const heading = document.createElement("strong");
-  heading.textContent = title;
-  div.appendChild(heading);
-
-  const body = document.createElement("p");
-  body.textContent = details;
-  div.appendChild(body);
-
-  const button = document.createElement("button");
-  button.textContent = "Hapus";
-  button.className = "secondary";
-  button.addEventListener("click", onDelete);
-  div.appendChild(button);
-
-  return div;
+function renderAll(){
+ document.getElementById('characterList').innerHTML=data.characters.length?data.characters.map(x=>cardItem(x,'characters',['age','description'])).join(''):'<div class="empty">Belum ada karakter.</div>';
+ document.getElementById('worldList').innerHTML=data.worlds.length?data.worlds.map(x=>cardItem(x,'worlds',['genre','description'])).join(''):'<div class="empty">Belum ada AU.</div>';
+ document.getElementById('storyList').innerHTML=data.stories.length?data.stories.map(x=>cardItem(x,'stories',['world','content'])).join(''):'<div class="empty">Belum ada cerita.</div>';
+ document.getElementById('rpList').innerHTML=data.roleplays.length?data.roleplays.map(x=>cardItem(x,'roleplays',['characters','setting','content'])).join(''):'<div class="empty">Belum ada adegan roleplay.</div>';
+ renderMedia();
+ const recent=[...data.characters,...data.worlds,...data.stories,...data.roleplays].slice(0,5);
+ document.getElementById('recent').innerHTML=recent.length?recent.map(x=>`<div class="item">${esc(x.name||x.title)}</div>`).join(''):'Belum ada karya. Mulailah membuat sesuatu!';
+ document.body.classList.toggle('light',data.theme==='light');
 }
-
-function renderList(elementId, items, formatter, onDelete) {
-  const container = document.getElementById(elementId);
-  container.replaceChildren();
-
-  if (!items.length) {
-    const empty = document.createElement("p");
-    empty.className = "empty";
-    empty.textContent = "Belum ada karya. Mulai buat sesuatu!";
-    container.appendChild(empty);
-    return;
-  }
-
-  items.forEach((item,index) => {
-    const formatted = formatter(item);
-    container.appendChild(makeItem(
-      formatted.title,
-      formatted.details,
-      () => {
-        if (!confirm("Hapus item ini?")) return;
-        onDelete(index);
-        saveData();
-        renderAll();
-      }
-    ));
-  });
+function renderMedia(){
+ const filter=document.getElementById('mediaFilter').value;
+ const list=data.media.filter(x=>!filter||x.category===filter);
+ document.getElementById('mediaList').innerHTML=list.length?list.map(x=>`<div class="item"><strong>${esc(x.name)}</strong> <span class="badge">${esc(x.category)}</span>${x.image?`<img loading="lazy" src="${x.image}" alt="${esc(x.name)}">`:''}<div class="actions"><button onclick="removeItem('media',${x.id})">Hapus</button></div></div>`).join(''):'<div class="empty">Belum ada gambar pada kategori ini.</div>';
 }
-
-function renderAll() {
-  renderList("characterList", data.characters, item => ({
-    title: item.name,
-    details: [
-      item.age && "Usia: " + item.age,
-      item.type && "Kepribadian: " + item.type,
-      item.appearance && "Penampilan: " + item.appearance,
-      item.bio && "Latar belakang: " + item.bio
-    ].filter(Boolean).join("\n")
-  }), index => data.characters.splice(index,1));
-
-  renderList("worldList", data.worlds, item => ({
-    title: item.name,
-    details: "Genre: " + item.genre + "\n" + item.description
-  }), index => data.worlds.splice(index,1));
-
-  renderList("storyList", data.stories, item => ({
-    title: item.title,
-    details: (item.world ? "Dunia: " + item.world + "\n" : "") + item.content
-  }), index => data.stories.splice(index,1));
-
-  renderList("chatList", data.chats, item => ({
-    title: item.character,
-    details: item.prompt
-  }), index => data.chats.splice(index,1));
-
-  renderList("roleplayList", data.roleplays, item => ({
-    title: item.title,
-    details: "Karakter: " + item.characters + "\n" + item.scene
-  }), index => data.roleplays.splice(index,1));
-
-  const select = document.getElementById("chatCharacter");
-  const previous = select.value;
-  select.replaceChildren();
-
-  if (!data.characters.length) {
-    const option = document.createElement("option");
-    option.value = "";
-    option.textContent = "Buat karakter terlebih dahulu";
-    select.appendChild(option);
-  } else {
-    data.characters.forEach(character => {
-      const option = document.createElement("option");
-      option.value = character.name;
-      option.textContent = character.name;
-      select.appendChild(option);
-    });
-    if (data.characters.some(c => c.name === previous)) {
-      select.value = previous;
-    }
-  }
+document.getElementById('mediaFilter').addEventListener('change',renderMedia);
+function makePrompt(){
+ const n=document.getElementById('chatName').value.trim();
+ const p=document.getElementById('chatPersonality').value.trim();
+ const m=document.getElementById('chatMessage').value.trim();
+ document.getElementById('chatOutput').value=`Perankan karakter fiksi ${n||'[nama karakter]'}.\nKepribadian dan latar belakang: ${p||'[jelaskan karakter]'}\nSituasi atau pesan: ${m||'[tulis situasi]'}\nBalas secara alami sesuai karakter dan konteks. Jangan mengaku sebagai orang sungguhan.`;
 }
-
-document.getElementById("characterForm").addEventListener("submit", event => {
-  event.preventDefault();
-  data.characters.push({
-    name: document.getElementById("charName").value.trim(),
-    age: document.getElementById("charAge").value.trim(),
-    type: document.getElementById("charType").value.trim(),
-    appearance: document.getElementById("charAppearance").value.trim(),
-    bio: document.getElementById("charBio").value.trim()
-  });
-  saveData();
-  event.target.reset();
-  renderAll();
-  alert("Karakter disimpan!");
-});
-
-document.getElementById("worldForm").addEventListener("submit", event => {
-  event.preventDefault();
-  data.worlds.push({
-    name: document.getElementById("worldName").value.trim(),
-    genre: document.getElementById("worldGenre").value,
-    description: document.getElementById("worldDesc").value.trim()
-  });
-  saveData();
-  event.target.reset();
-  renderAll();
-  alert("Dunia AU disimpan!");
-});
-
-document.getElementById("storyForm").addEventListener("submit", event => {
-  event.preventDefault();
-  data.stories.push({
-    title: document.getElementById("storyTitle").value.trim(),
-    world: document.getElementById("storyWorld").value.trim(),
-    content: document.getElementById("storyContent").value
-  });
-  saveData();
-  event.target.reset();
-  renderAll();
-  alert("Cerita disimpan!");
-});
-
-document.getElementById("roleplayForm").addEventListener("submit", event => {
-  event.preventDefault();
-  data.roleplays.push({
-    title: document.getElementById("rpTitle").value.trim(),
-    characters: document.getElementById("rpCharacters").value.trim(),
-    scene: document.getElementById("rpScene").value
-  });
-  saveData();
-  event.target.reset();
-  renderAll();
-  alert("Roleplay disimpan!");
-});
-
-function saveChatPrompt() {
-  const prompt = document.getElementById("chatPrompt").value.trim();
-  if (!prompt) {
-    alert("Tulis pesan atau adegan terlebih dahulu.");
-    return;
-  }
-  data.chats.push({
-    character: document.getElementById("chatCharacter").value || "Belum ada karakter",
-    prompt
-  });
-  saveData();
-  document.getElementById("chatPrompt").value = "";
-  renderAll();
-  alert("Adegan tersimpan. AI belum aktif pada versi ini.");
+async function copyText(id){const el=document.getElementById(id);try{await navigator.clipboard.writeText(el.value);alert('Berhasil disalin!')}catch(e){el.select();alert('Teks dipilih. Tekan Salin pada perangkat jika diperlukan.')}}
+function copyPrompt(){copyText('chatOutput')}
+function buildAI(){
+ const s=document.getElementById('aiSubject').value.trim()||'[subject]';
+ const style=document.getElementById('aiStyle').value;
+ const d=document.getElementById('aiDetail').value.trim();
+ document.getElementById('aiOutput').value=`${s}, ${style}, ${d}, detailed composition, beautiful lighting, high quality illustration.`;
 }
-
-document.getElementById("mediaFiles").addEventListener("change", event => {
-  const preview = document.getElementById("mediaPreview");
-  preview.replaceChildren();
-
-  Array.from(event.target.files || []).forEach(file => {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    const title = document.createElement("p");
-    title.textContent = file.name;
-    card.appendChild(title);
-
-    const url = URL.createObjectURL(file);
-    let element;
-
-    if (file.type.startsWith("image/")) {
-      element = document.createElement("img");
-      element.style.width = "100%";
-      element.style.borderRadius = "10px";
-      element.alt = file.name;
-      element.src = url;
-    } else if (file.type.startsWith("audio/")) {
-      element = document.createElement("audio");
-      element.controls = true;
-      element.src = url;
-      element.style.width = "100%";
-    } else if (file.type.startsWith("video/")) {
-      element = document.createElement("video");
-      element.controls = true;
-      element.src = url;
-      element.style.width = "100%";
-    }
-
-    if (element) card.appendChild(element);
-    preview.appendChild(card);
-  });
-});
-
-function exportData() {
-  const blob = new Blob([JSON.stringify(data,null,2)], {
-    type:"application/json"
-  });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = "eclipse-au-backup.json";
-  link.click();
-  setTimeout(() => URL.revokeObjectURL(url),1000);
+function copyAI(){copyText('aiOutput')}
+function toggleTheme(){data.theme=data.theme==='light'?'dark':'light';saveData();renderAll()}
+function exportData(){
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='eclipse-au-backup.json';a.click();URL.revokeObjectURL(a.href);
 }
-
-function importData() {
-  const file = document.getElementById("importFile").files[0];
-  if (!file) {
-    alert("Pilih file cadangan JSON terlebih dahulu.");
-    return;
-  }
-
-  const reader = new FileReader();
-  reader.onload = () => {
-    try {
-      const imported = JSON.parse(reader.result);
-      const valid = imported &&
-        Array.isArray(imported.characters) &&
-        Array.isArray(imported.worlds) &&
-        Array.isArray(imported.stories) &&
-        Array.isArray(imported.chats) &&
-        Array.isArray(imported.roleplays);
-
-      if (!valid) throw new Error("Format cadangan tidak sesuai.");
-
-      if (!confirm("Impor akan mengganti data ECLIPSE AU saat ini. Lanjutkan?")) return;
-
-      data = {...defaults,...imported};
-      saveData();
-      setTheme(data.theme);
-      renderAll();
-      alert("Cadangan berhasil diimpor.");
-    } catch {
-      alert("File tidak valid atau bukan cadangan ECLIPSE AU.");
-    }
-  };
-  reader.readAsText(file);
+function importData(){
+ const file=document.getElementById('importFile').files[0];if(!file)return alert('Pilih file cadangan JSON terlebih dahulu.');
+ const r=new FileReader();r.onload=()=>{
+ try{const incoming=JSON.parse(r.result);
+ if(!confirm('Impor akan mengganti data ECLIPSE AU saat ini. Lanjutkan?'))return;
+ data={...defaults,...incoming};saveData();renderAll();alert('Cadangan berhasil diimpor.');
+ }catch(e){alert('File JSON tidak valid.')}
+ };r.readAsText(file);
 }
-
-setTheme(data.theme);
+function clearData(){
+ if(!confirm('Yakin ingin menghapus SEMUA data ECLIPSE AU dari browser ini? Ekspor cadangan dahulu jika diperlukan.'))return;
+ data={...defaults};saveData();renderAll();
+}
 renderAll();
 </script>
 </body>
-  </html>
+</html>
