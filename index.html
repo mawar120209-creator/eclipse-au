@@ -178,7 +178,284 @@ footer {
 }
 </style>
 </head>
+<!-- ECLIPSE AU GALLERY -->
+<section id="eclipse-gallery" style="
+  max-width:1000px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:20px;
+  background:#171326;
+  color:#f4efff;
+  font-family:Arial,sans-serif;
+">
+  <h2>🌌 ECLIPSE AU Gallery</h2>
+  <p>Simpan gambar karakter, sampul AU, dan dunia fantasi milikmu.</p>
 
+  <label for="eclipseAlbum">Nama album / AU</label>
+  <input id="eclipseAlbum"
+    type="text"
+    placeholder="Contoh: Royal Fantasy AU"
+    style="display:block;width:100%;box-sizing:border-box;padding:12px;margin:8px 0 16px;border-radius:10px;">
+
+  <label for="eclipseImages">Pilih foto dari HP</label>
+  <input id="eclipseImages"
+    type="file"
+    accept="image/*"
+    multiple
+    style="display:block;width:100%;margin:12px 0;">
+
+  <button id="eclipseUpload" type="button"
+    style="padding:12px 18px;border:0;border-radius:10px;background:#9b70ff;color:white;font-weight:bold;">
+    ✨ Simpan Foto
+  </button>
+
+  <p id="eclipseStatus" role="status" aria-live="polite"></p>
+
+  <hr style="border-color:#49405f;margin:24px 0;">
+
+  <h3>📚 Album Gambarku</h3>
+
+  <select id="eclipseFilter"
+    aria-label="Pilih album"
+    style="width:100%;padding:12px;border-radius:10px;margin-bottom:16px;">
+    <option value="">Semua album</option>
+  </select>
+
+  <div id="eclipsePhotoGrid" style="
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(135px,1fr));
+    gap:12px;
+  "></div>
+</section>
+
+<style>
+#eclipse-gallery input,
+#eclipse-gallery select,
+#eclipse-gallery button {
+  font-size:15px;
+}
+#eclipse-gallery img {
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
+#eclipse-gallery .eclipse-card {
+  background:#28203c;
+  padding:9px;
+  border-radius:14px;
+  overflow-wrap:anywhere;
+}
+#eclipse-gallery .eclipse-card button {
+  padding:7px;
+  margin-top:7px;
+  border:0;
+  border-radius:7px;
+  cursor:pointer;
+}
+#eclipse-gallery .eclipse-card a {
+  display:inline-block;
+  margin-top:7px;
+  color:#d8c5ff;
+}
+</style>
+
+<script>
+(function () {
+  const DB_NAME = "EclipseAUGallery";
+  const STORE = "photos";
+  let db;
+  let currentUrls = [];
+
+  const albumInput = document.getElementById("eclipseAlbum");
+  const fileInput = document.getElementById("eclipseImages");
+  const uploadBtn = document.getElementById("eclipseUpload");
+  const status = document.getElementById("eclipseStatus");
+  const filter = document.getElementById("eclipseFilter");
+  const grid = document.getElementById("eclipsePhotoGrid");
+
+  function openDB() {
+    return new Promise((resolve, reject) => {
+      const request = indexedDB.open(DB_NAME, 1);
+
+      request.onupgradeneeded = () => {
+        const database = request.result;
+        if (!database.objectStoreNames.contains(STORE)) {
+          database.createObjectStore(STORE, {
+            keyPath: "id",
+            autoIncrement: true
+          });
+        }
+      };
+
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+  }
+
+  function getAllPhotos() {
+    return new Promise((resolve, reject) => {
+      const request = db.transaction(STORE, "readonly")
+        .objectStore(STORE).getAll();
+
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+  }
+
+  function savePhoto(photo) {
+    return new Promise((resolve, reject) => {
+      const request = db.transaction(STORE, "readwrite")
+        .objectStore(STORE).add(photo);
+
+      request.onsuccess = () => resolve();
+      request.onerror = () => reject(request.error);
+    });
+  }
+
+  function deletePhoto(id) {
+    return new Promise((resolve, reject) => {
+      const request = db.transaction(STORE, "readwrite")
+        .objectStore(STORE).delete(id);
+
+      request.onsuccess = () => resolve();
+      request.onerror = () => reject(request.error);
+    });
+  }
+
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, char => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    })[char]);
+  }
+
+  async function renderGallery() {
+    currentUrls.forEach(url => URL.revokeObjectURL(url));
+    currentUrls = [];
+    grid.replaceChildren();
+
+    const photos = await getAllPhotos();
+    const albums = [...new Set(photos.map(p => p.album))].sort();
+    const selected = filter.value;
+
+    filter.replaceChildren(new Option("Semua album", ""));
+    albums.forEach(album => {
+      filter.add(new Option(album, album));
+    });
+
+    filter.value = selected;
+
+    const visible = selected
+      ? photos.filter(photo => photo.album === selected)
+      : photos;
+
+    if (!visible.length) {
+      grid.textContent = "Belum ada foto di album ini. Yuk, tambahkan gambar!";
+      return;
+    }
+
+    visible.forEach(photo => {
+      const card = document.createElement("div");
+      card.className = "eclipse-card";
+
+      const image = document.createElement("img");
+      image.alt = photo.name;
+      image.src = URL.createObjectURL(photo.blob);
+      currentUrls.push(image.src);
+
+      const title = document.createElement("p");
+      title.textContent = photo.name;
+      title.style.fontSize = "13px";
+
+      const album = document.createElement("small");
+      album.textContent = "📁 " + photo.album;
+
+      const download = document.createElement("a");
+      download.href = image.src;
+      download.download = photo.name;
+      download.textContent = "⬇️ Unduh";
+
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.textContent = "🗑️ Hapus";
+
+      remove.addEventListener("click", async () => {
+        if (!confirm("Hapus foto ini dari galeri?")) return;
+
+        try {
+          await deletePhoto(photo.id);
+          status.textContent = "Foto berhasil dihapus.";
+          await renderGallery();
+        } catch (error) {
+          status.textContent = "Foto gagal dihapus.";
+        }
+      });
+
+      card.append(image, title, album, document.createElement("br"),
+        download, document.createElement("br"), remove);
+
+      grid.appendChild(card);
+    });
+  }
+
+  uploadBtn.addEventListener("click", async () => {
+    const files = [...fileInput.files];
+    const album = albumInput.value.trim() || "Album Tanpa Nama";
+
+    if (!files.length) {
+      status.textContent = "Pilih foto terlebih dahulu.";
+      return;
+    }
+
+    const images = files.filter(file => file.type.startsWith("image/"));
+
+    if (!images.length) {
+      status.textContent = "Pilih file gambar yang valid.";
+      return;
+    }
+
+    uploadBtn.disabled = true;
+
+    try {
+      for (const file of images) {
+        await savePhoto({
+          name: file.name,
+          album: album,
+          blob: file,
+          savedAt: Date.now()
+        });
+      }
+
+      fileInput.value = "";
+      filter.value = "";
+      status.textContent = images.length + " foto berhasil disimpan!";
+      await renderGallery();
+    } catch (error) {
+      status.textContent =
+        "Penyimpanan gagal. Ruang browser mungkin tidak cukup.";
+    } finally {
+      uploadBtn.disabled = false;
+    }
+  });
+
+  filter.addEventListener("change", renderGallery);
+
+  openDB()
+    .then(database => {
+      db = database;
+      return renderGallery();
+    })
+    .catch(() => {
+      status.textContent =
+        "Galeri tidak dapat dibuka di browser ini.";
+    });
+})();
+                       </script>
 <body>
 <header>
   <div>
