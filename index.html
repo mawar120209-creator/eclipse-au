@@ -1,22 +1,734 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#171022"><title>ECLIPSE AU — Your Universe, Your Rules</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100b18">
+<title>ECLIPSE AU — Multiverse</title>
+
 <style>
-:root{--bg:#100d18;--panel:#1b1627;--panel2:#251d35;--text:#f6f0ff;--muted:#b8accb;--accent:#bd91ff;--line:#3b2e50;--good:#a9edcf}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#302047 0,var(--bg) 58%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}body[data-theme="light"]{--bg:#f6f1fc;--panel:#fff;--panel2:#eee5f8;--text:#281b38;--muted:#6e5b80;--accent:#7944b5;--line:#dfd0ee;--good:#176b49;background:var(--bg)}body[data-theme="ocean"]{--bg:#08151f;--panel:#102432;--panel2:#173446;--text:#edf8ff;--muted:#a8c3d4;--accent:#76d5ee;--line:#285064;--good:#a9edcf}body[data-theme="rose"]{--bg:#1d101b;--panel:#2a1928;--panel2:#3b2237;--text:#fff1fa;--muted:#d0afc4;--accent:#ff9bd1;--line:#58364e;--good:#a9edcf}header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:12px max(16px,env(safe-area-inset-left));display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:900;letter-spacing:.14em}.brand small{display:block;font-size:10px;letter-spacing:.1em;color:var(--muted);font-weight:500}.wrap{max-width:1100px;margin:auto;padding:22px 16px 100px}.hero{padding:26px 20px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,var(--panel2),var(--panel));position:relative;overflow:hidden}.eyebrow{color:var(--accent);font-size:12px;letter-spacing:.18em;font-weight:800}.hero h1{font-size:clamp(30px,7vw,54px);line-height:1.04;margin:10px 0}.hero p{color:var(--muted);max-width:620px}.row{display:flex;gap:9px;flex-wrap:wrap}.btn,button{font:inherit;cursor:pointer;border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:var(--panel2);color:var(--text)}.primary{background:var(--accent);color:#21132f;border-color:transparent;font-weight:800}.danger{color:#ffaaa8}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:13px;margin-top:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;min-width:0}.card h3{margin:0 0 5px}.muted{color:var(--muted)}.section{margin-top:26px}.section h2{font-size:21px;margin:0 0 12px}.tabs{display:flex;gap:7px;overflow:auto;padding:12px 0;position:sticky;top:61px;z-index:4;background:var(--bg)}.tab{white-space:nowrap}.tab.active{background:var(--accent);color:#21132f;font-weight:800}label{display:block;font-size:13px;color:var(--muted);margin:10px 0 5px}input,textarea,select{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px;color:var(--text);font:inherit}textarea{min-height:100px;resize:vertical}.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px}.item{border:1px solid var(--line);border-radius:13px;padding:12px;margin-top:9px;background:var(--panel2)}.pill{font-size:11px;padding:3px 8px;border-radius:99px;background:var(--panel2);color:var(--accent);border:1px solid var(--line)}.empty{padding:20px;text-align:center;color:var(--muted)}.note{font-size:12px;color:var(--muted)}.chatbox{height:230px;overflow:auto;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px}.bubble{max-width:90%;padding:10px 12px;border-radius:13px;margin:8px 0;background:var(--panel2);white-space:pre-wrap}.bubble.me{margin-left:auto;background:color-mix(in srgb,var(--accent) 28%,var(--panel));}.bottomnav{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-around;gap:4px;padding:8px 5px calc(8px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--panel) 95%,transparent);border-top:1px solid var(--line);z-index:6}.bottomnav button{font-size:11px;padding:8px 5px;flex:1}.bottomnav button span{display:block;font-size:17px}@media(min-width:760px){.bottomnav{position:static;background:transparent;border:0;max-width:1100px;margin:auto;padding:0 16px 20px}.bottomnav button{font-size:13px}.bottomnav button span{display:inline;margin-right:6px}header{padding-left:max(22px,calc((100% - 1060px)/2));padding-right:max(22px,calc((100% - 1060px)/2))}}
-</style></head>
-<body data-theme="eclipse"><header><div class="brand">☾ ECLIPSE AU<small>YOUR UNIVERSE · YOUR RULES</small></div><button id="quickNew">＋ AU Baru</button></header><main class="wrap"><section id="home" class="page"><div class="hero"><div class="eyebrow">CREATE YOUR OWN UNIVERSE</div><h1>Ceritamu.<br>Aturanmu.</h1><p>Buat dunia, ciptakan karakter, tulis cerita, dan bangun hubungan antartokoh. Semua data versi awal tersimpan di browser perangkat ini.</p><div class="row"><button class="primary" data-go="universes">✦ Mulai membuat AU</button><button data-go="characters">＋ Buat karakter</button></div></div><div class="grid"><div class="card"><div class="eyebrow">UNIVERSE</div><h3 id="countAu">0 AU</h3><p class="muted">Dunia cerita buatanmu.</p></div><div class="card"><div class="eyebrow">CHARACTERS</div><h3 id="countChar">0 karakter</h3><p class="muted">Tokoh dengan kepribadian unik.</p></div><div class="card"><div class="eyebrow">STORY STUDIO</div><h3 id="countStory">0 naskah</h3><p class="muted">Simpan narasi dan dialog.</p></div></div><div class="section"><h2>AU Terakhir</h2><div id="recentAu" class="grid"></div></div><div class="section"><h2>Mulai dari mana?</h2><div class="grid"><div class="card"><h3>🌌 Universe Studio</h3><p class="muted">Bangun dunia modern, kerajaan, fantasi, kampus, atau zombie apocalypse.</p><button data-go="universes">Buka Universe</button></div><div class="card"><h3>👤 Character Studio</h3><p class="muted">Buat tokoh satu per satu atau impor banyak tokoh dari JSON.</p><button data-go="characters">Buka Characters</button></div><div class="card"><h3>📖 Story Studio</h3><p class="muted">Tulis adegan, dialog, dan pilihan cerita.</p><button data-go="stories">Buka Story Studio</button></div></div></div></section>
-<section id="universes" class="page" hidden><div class="section"><h2>🌌 Universe Studio</h2><p class="muted">Buat dunia dan tentukan suasananya.</p><div class="card"><form id="auForm"><div class="formgrid"><div><label>Nama AU *</label><input name="name" required placeholder="Contoh: The Last Haven"></div><div><label>Genre</label><select name="genre"><option>Fantasy</option><option>Romance</option><option>Modern</option><option>Kerajaan China</option><option>Kampus</option><option>Horror</option><option>Zombie Apocalypse</option><option>Slice of Life</option><option>Custom</option></select></div></div><label>Premis / deskripsi</label><textarea name="description" placeholder="Apa yang membuat dunia ini unik?"></textarea><label>Privasi (label untuk rancangan awal)</label><select name="privacy"><option>Private</option><option>Unlisted</option><option>Public</option></select><p class="note">Label privasi belum menerbitkan cerita ke internet; publikasi sungguhan memerlukan hosting dan backend.</p><button class="primary">Simpan AU</button></form></div><div id="auList" class="grid"></div></div></section>
-<section id="characters" class="page" hidden><div class="section"><h2>👥 Character Studio</h2><div class="card"><form id="charForm"><div class="formgrid"><div><label>Nama karakter *</label><input name="name" required placeholder="Nama tokoh"></div><div><label>MBTI</label><select name="mbti"><option>Belum ditentukan</option><option>INTJ</option><option>INTP</option><option>ENTJ</option><option>ENTP</option><option>INFJ</option><option>INFP</option><option>ENFJ</option><option>ENFP</option><option>ISTJ</option><option>ISFJ</option><option>ESTJ</option><option>ESFJ</option><option>ISTP</option><option>ISFP</option><option>ESTP</option><option>ESFP</option></select></div><div><label>Usia</label><input name="age" type="number" min="0" placeholder="20"></div><div><label>Universe</label><select name="universe" id="charUniverse"><option value="">— Tanpa universe —</option></select></div></div><label>Penampilan</label><input name="appearance" placeholder="Rambut, mata, pakaian..."><label>Kepribadian</label><textarea name="personality" placeholder="Sifat, kebiasaan, cara berbicara..."></textarea><label>Latar belakang / rahasia</label><textarea name="background" placeholder="Riwayat hidup, tujuan, rahasia..."></textarea><button class="primary">Simpan karakter</button></form></div><div class="card section"><h3>Impor banyak karakter (JSON)</h3><p class="note">Gunakan array JSON. Setiap objek dapat berisi name, mbti, age, universe, appearance, personality, background.</p><textarea id="importJson" placeholder='[{"name":"Alya","mbti":"INFJ","age":21}]'></textarea><div class="row"><button id="importBtn">Impor karakter</button><button id="exportBtn">Ekspor semua data (JSON)</button><label class="btn" style="display:inline-block;margin:0">Pilih file JSON<input id="fileJson" type="file" accept="application/json,.json" hidden></label></div></div><div id="charList" class="grid"></div></div></section>
-<section id="stories" class="page" hidden><div class="section"><h2>📖 Story Studio</h2><div class="card"><form id="storyForm"><label>Judul naskah *</label><input name="title" required placeholder="Bab 1 — Pertemuan pertama"><div class="formgrid"><div><label>Universe</label><select name="universe" id="storyUniverse"><option value="">— Tanpa universe —</option></select></div><div><label>Tokoh fokus</label><select name="character" id="storyCharacter"><option value="">— Pilih karakter —</option></select></div></div><label>Narasi dan dialog</label><textarea name="content" style="min-height:180px" placeholder="Tulis adeganmu di sini..."></textarea><label>Pilihan pembaca (satu per baris)</label><textarea name="choices" placeholder="Menjawab dengan jujur\nMengalihkan pembicaraan"></textarea><button class="primary">Simpan naskah</button></form></div><div id="storyList" class="grid"></div></div></section>
-<section id="chat" class="page" hidden><div class="section"><h2>💬 Character Chat</h2><div class="card"><span class="pill">DEMO LOKAL</span><p class="muted">Area percakapan ini adalah simulasi lokal, belum terhubung ke AI sungguhan. Integrasi AI perlu endpoint yang kompatibel dan backend aman.</p><label>Pilih karakter</label><select id="chatCharacter"><option value="">— Pilih karakter —</option></select><div id="chatbox" class="chatbox" aria-live="polite"><p class="muted">Pilih karakter lalu mulai menulis pesan.</p></div><form id="chatForm"><label>Pesanmu</label><div class="row" style="flex-wrap:nowrap"><input id="chatInput" placeholder="Ketik pesan..." required><button class="primary">Kirim</button></div></form><button id="clearChat" style="margin-top:8px">Bersihkan percakapan</button></div><div class="card section"><h3>🔐 AI Provider Settings</h3><p class="note">Versi ini hanya menyimpan nama penyedia dan endpoint. Jangan masukkan API key ke website statis yang akan dipublikasikan: kunci dapat terekspos. Integrasi produksi sebaiknya mengirim permintaan melalui backend dan menyimpan rahasia di server.</p><form id="aiForm"><label>Penyedia AI</label><select name="provider"><option>OpenAI-compatible API</option><option>Provider lain yang kompatibel</option></select><label>Endpoint API</label><input name="endpoint" placeholder="https://... (endpoint resmi penyedia)"><label>Nama model</label><input name="model" placeholder="Nama model sesuai provider"><button class="primary">Simpan konfigurasi (tanpa API key)</button></form><p id="aiStatus" class="note"></p></div></div></section>
-<section id="settings" class="page" hidden><div class="section"><h2>⚙️ Settings</h2><div class="card"><label>Tema tampilan</label><div class="formgrid"><button data-theme-set="eclipse">💜 Eclipse Purple</button><button data-theme-set="light">🌸 Light Lavender</button><button data-theme-set="ocean">🌊 Midnight Ocean</button><button data-theme-set="rose">🌹 Dark Rose</button></div><label>Bahasa</label><select id="language"><option value="id">Bahasa Indonesia</option><option value="en">English (basic label support)</option></select><p class="note">Versi awal ini menyimpan data di browser perangkat. Menghapus data browser dapat menghapus karya yang belum diekspor. Ekspor cadangan secara berkala.</p><div class="row"><button id="backupBtn">Unduh cadangan JSON</button><label class="btn" style="display:inline-block;margin:0">Pulihkan cadangan<input id="restoreFile" type="file" accept="application/json,.json" hidden></label><button id="installBtn">Pasang aplikasi</button></div></div><div class="card section"><h3>Data & privasi</h3><p class="muted">Karya disimpan di localStorage browser pada perangkat ini. Tidak ada akun, sinkronisasi, atau publikasi daring dalam prototipe ini.</p><button id="deleteAll" class="danger">Hapus semua data lokal</button></div><div class="card section"><h3>Langkah menuju publikasi</h3><ol class="muted"><li>Uji file ini di browser Android.</li><li>Unggah ke layanan hosting statis untuk memperoleh alamat website.</li><li>Tambahkan manifest dan service worker agar lebih layak dipasang sebagai PWA.</li><li>Bangun backend untuk akun, sinkronisasi, komunitas, dan integrasi AI yang aman.</li></ol></div></div></section>
-</main><nav class="bottomnav"><button data-go="home"><span>⌂</span>Home</button><button data-go="universes"><span>🌌</span>Universe</button><button data-go="characters"><span>👥</span>Characters</button><button data-go="stories"><span>📖</span>Stories</button><button data-go="settings"><span>⚙️</span>Settings</button></nav>
+:root {
+  --bg:#100b18;
+  --panel:#1d1428;
+  --text:#f7efff;
+  --muted:#b9a9ca;
+  --accent:#b69aff;
+  --border:#49365f;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  font-family:system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  transition:background .25s,color .25s;
+}
+button,input,textarea,select { font:inherit; }
+button {
+  cursor:pointer;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:11px 14px;
+  background:var(--panel);
+  color:var(--text);
+}
+button:hover { filter:brightness(1.15); }
+input,textarea,select {
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--bg);
+  color:var(--text);
+  margin:6px 0 12px;
+}
+textarea { min-height:110px; resize:vertical; }
+label { color:var(--muted); font-size:14px; }
+header {
+  position:sticky;
+  top:0;
+  z-index:5;
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
+  padding:14px 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+.logo {
+  font-weight:900;
+  letter-spacing:2px;
+  color:var(--accent);
+}
+header small { color:var(--muted); }
+.layout {
+  display:grid;
+  grid-template-columns:210px minmax(0,1fr);
+  max-width:1200px;
+  margin:auto;
+  min-height:calc(100vh - 65px);
+}
+nav {
+  padding:18px 12px;
+  border-right:1px solid var(--border);
+}
+.nav-button {
+  display:block;
+  width:100%;
+  text-align:left;
+  margin-bottom:8px;
+  border-color:transparent;
+}
+.nav-button.active {
+  background:var(--accent);
+  color:var(--bg);
+  font-weight:bold;
+}
+main { padding:22px; min-width:0; }
+.hero {
+  padding:30px 22px;
+  border:1px solid var(--border);
+  border-radius:22px;
+  background:linear-gradient(140deg,var(--panel),var(--bg));
+  margin-bottom:22px;
+}
+.hero h1 { font-size:clamp(28px,6vw,46px); margin:8px 0; }
+.hero p { color:var(--muted); line-height:1.7; }
+.eyebrow {
+  text-transform:uppercase;
+  letter-spacing:3px;
+  color:var(--accent);
+  font-size:12px;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.card {
+  padding:17px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:var(--panel);
+  min-width:0;
+}
+.card h3 { margin:5px 0 8px; }
+.card p { color:var(--muted); font-size:14px; line-height:1.6; }
+.card-icon { font-size:27px; }
+.section { display:none; }
+.section.active { display:block; }
+.section-title { margin-top:0; }
+.row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+}
+.primary {
+  background:var(--accent);
+  color:var(--bg);
+  font-weight:bold;
+  border-color:var(--accent);
+}
+.secondary { background:transparent; }
+.item {
+  padding:13px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  margin:10px 0;
+  overflow-wrap:anywhere;
+}
+.item p { white-space:pre-wrap; }
+.item small { color:var(--muted); }
+.empty { color:var(--muted); padding:18px 0; }
+.note {
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.7;
+}
+footer {
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  padding:24px 10px;
+}
+@media(max-width:650px) {
+  .layout { display:block; }
+  nav {
+    display:flex;
+    overflow-x:auto;
+    gap:7px;
+    padding:10px;
+    border-right:0;
+    border-bottom:1px solid var(--border);
+  }
+  .nav-button {
+    display:inline-block;
+    width:auto;
+    white-space:nowrap;
+    margin:0;
+    padding:10px 12px;
+  }
+  main { padding:15px; }
+  header { padding:12px; }
+  .grid { grid-template-columns:1fr; }
+  .hero { padding:23px 17px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div>
+    <div class="logo">☾ ECLIPSE AU</div>
+    <small>Your imagination. Infinite universes.</small>
+  </div>
+  <button onclick="showSection('settings')">⚙️</button>
+</header>
+
+<div class="layout">
+<nav id="navigation">
+  <button class="nav-button active" data-page="home" onclick="showSection('home')">🏠 Beranda</button>
+  <button class="nav-button" data-page="characters" onclick="showSection('characters')">👤 Characters</button>
+  <button class="nav-button" data-page="worlds" onclick="showSection('worlds')">🌍 AU Worlds</button>
+  <button class="nav-button" data-page="stories" onclick="showSection('stories')">✍️ Story Studio</button>
+  <button class="nav-button" data-page="chat" onclick="showSection('chat')">💬 Character Chat</button>
+  <button class="nav-button" data-page="roleplay" onclick="showSection('roleplay')">🎭 Roleplay</button>
+  <button class="nav-button" data-page="media" onclick="showSection('media')">🖼️ Media Studio</button>
+  <button class="nav-button" data-page="settings" onclick="showSection('settings')">⚙️ Pengaturan</button>
+</nav>
+
+<main>
+<section class="section active" id="home">
+  <div class="hero">
+    <div class="eyebrow">Your personal creative universe</div>
+    <h1>Welcome to<br>ECLIPSE AU ✦</h1>
+    <p>
+      Ciptakan karakter, bangun dunia alternatif, tulis kisah,
+      dan jelajahi berbagai kemungkinan cerita dalam satu tempat.
+    </p>
+    <div class="row">
+      <button class="primary" onclick="showSection('characters')">＋ Buat Karakter</button>
+      <button onclick="showSection('stories')">✍️ Mulai Cerita</button>
+    </div>
+  </div>
+
+  <h2>✦ Creative Studio</h2>
+  <div class="grid">
+    <div class="card" onclick="showSection('characters')">
+      <div class="card-icon">👤</div>
+      <h3>Character Studio</h3>
+      <p>Ciptakan tokoh, kepribadian, penampilan, dan latar belakang.</p>
+      <button>Buka Studio →</button>
+    </div>
+    <div class="card" onclick="showSection('worlds')">
+      <div class="card-icon">🌌</div>
+      <h3>AU World Builder</h3>
+      <p>Bangun dunia fantasi, kerajaan, sekolah, atau multiverse.</p>
+      <button>Buat Dunia →</button>
+    </div>
+    <div class="card" onclick="showSection('stories')">
+      <div class="card-icon">📖</div>
+      <h3>Story Studio</h3>
+      <p>Simpan ide, alur, dialog, dan bab ceritamu.</p>
+      <button>Tulis Cerita →</button>
+    </div>
+    <div class="card" onclick="showSection('chat')">
+      <div class="card-icon">💬</div>
+      <h3>Character Chat</h3>
+      <p>Siapkan percakapan bersama karakter buatanmu.</p>
+      <button>Buka Chat →</button>
+    </div>
+    <div class="card" onclick="showSection('roleplay')">
+      <div class="card-icon">🎭</div>
+      <h3>Interactive Roleplay</h3>
+      <p>Simpan adegan dan lanjutkan petualangan roleplay.</p>
+      <button>Mulai Roleplay →</button>
+    </div>
+    <div class="card" onclick="showSection('media')">
+      <div class="card-icon">🖼️</div>
+      <h3>Media Studio</h3>
+      <p>Pilih gambar, musik, audio, dan video untuk proyekmu.</p>
+      <button>Buka Media →</button>
+    </div>
+  </div>
+  <p class="note">Karya tersimpan di browser perangkat ini. Buat cadangan secara berkala.</p>
+</section>
+
+<section class="section" id="characters">
+  <h2 class="section-title">👤 Character Studio</h2>
+  <p class="note">Buat karakter orisinal untuk dunia AU-mu.</p>
+  <form id="characterForm">
+    <label>Nama karakter</label>
+    <input id="charName" required placeholder="Contoh: Alya">
+    <label>Usia</label>
+    <input id="charAge" placeholder="Contoh: 22 tahun">
+    <label>MBTI atau kepribadian</label>
+    <input id="charType" placeholder="Contoh: INFJ">
+    <label>Penampilan</label>
+    <textarea id="charAppearance" placeholder="Rambut, mata, pakaian, ciri khas..."></textarea>
+    <label>Latar belakang dan sifat</label>
+    <textarea id="charBio" placeholder="Siapa dia? Apa tujuan dan rahasianya?"></textarea>
+    <button class="primary" type="submit">＋ Simpan Karakter</button>
+  </form>
+  <h3>Karakterku</h3>
+  <div id="characterList"></div>
+</section>
+
+<section class="section" id="worlds">
+  <h2 class="section-title">🌍 AU World Builder</h2>
+  <form id="worldForm">
+    <label>Nama dunia AU</label>
+    <input id="worldName" required placeholder="Contoh: Eclipse Kingdom">
+    <label>Genre</label>
+    <select id="worldGenre">
+      <option>Fantasy</option>
+      <option>Dark Fantasy</option>
+      <option>Romance</option>
+      <option>Modern AU</option>
+      <option>Historical AU</option>
+      <option>Royal Chinese Fantasy</option>
+      <option>Zombie Apocalypse</option>
+      <option>Sci-Fi</option>
+    </select>
+    <label>Deskripsi dunia</label>
+    <textarea id="worldDesc" placeholder="Jelaskan dunia, aturan, konflik, dan sejarahnya..."></textarea>
+    <button class="primary" type="submit">＋ Simpan Dunia</button>
+  </form>
+  <h3>Dunia yang Kubuat</h3>
+  <div id="worldList"></div>
+</section>
+
+<section class="section" id="stories">
+  <h2 class="section-title">✍️ Story Studio</h2>
+  <form id="storyForm">
+    <label>Judul cerita</label>
+    <input id="storyTitle" required placeholder="Judul AU atau bab">
+    <label>Nama dunia (opsional)</label>
+    <input id="storyWorld" placeholder="Nama dunia AU">
+    <label>Isi cerita</label>
+    <textarea id="storyContent" required style="min-height:220px" placeholder="Tuliskan adegan, narasi, dialog, atau ide ceritamu..."></textarea>
+    <button class="primary" type="submit">＋ Simpan Cerita</button>
+  </form>
+  <h3>Arsip Cerita</h3>
+  <div id="storyList"></div>
+</section>
+
+<section class="section" id="chat">
+  <h2 class="section-title">💬 AI Character Chat</h2>
+  <div class="card">
+    <p>Ruang persiapan percakapan karakter.</p>
+    <label>Pilih karakter</label>
+    <select id="chatCharacter"></select>
+    <label>Pesan atau adegan yang ingin kamu mulai</label>
+    <textarea id="chatPrompt" placeholder="Contoh: Aku menatapnya lalu bertanya, 'Apa yang sebenarnya terjadi?'"></textarea>
+    <button class="primary" onclick="saveChatPrompt()">Simpan Adegan</button>
+    <p class="note">Versi ini belum terhubung ke model AI. Tombol simpan hanya menyimpan adeganmu, bukan menghasilkan balasan AI.</p>
+  </div>
+  <h3>Adegan Chat Tersimpan</h3>
+  <div id="chatList"></div>
+</section>
+
+<section class="section" id="roleplay">
+  <h2 class="section-title">🎭 Interactive Roleplay</h2>
+  <form id="roleplayForm">
+    <label>Judul roleplay</label>
+    <input id="rpTitle" required placeholder="Contoh: The Last Haven">
+    <label>Karakter yang terlibat</label>
+    <input id="rpCharacters" placeholder="Pisahkan nama dengan koma">
+    <label>Adegan terakhir</label>
+    <textarea id="rpScene" required placeholder="Tuliskan aksi, dialog, dan posisi terakhir setiap karakter..."></textarea>
+    <button class="primary" type="submit">＋ Simpan Roleplay</button>
+  </form>
+  <h3>Roleplay-ku</h3>
+  <div id="roleplayList"></div>
+</section>
+
+<section class="section" id="media">
+  <h2 class="section-title">🖼️ Media Studio</h2>
+  <p class="note">Pilih media dari perangkatmu. File besar dapat memenuhi ruang penyimpanan browser.</p>
+  <label>Pilih gambar, audio, atau video</label>
+  <input id="mediaFiles" type="file" accept="image/*,audio/*,video/*" multiple>
+  <div id="mediaPreview" class="grid"></div>
+  <p class="note">Pratinjau media hanya tersedia selama halaman terbuka. Unggahan belum tersinkronisasi ke akun atau cloud.</p>
+</section>
+
+<section class="section" id="settings">
+  <h2 class="section-title">⚙️ Pengaturan</h2>
+  <div class="card">
+    <h3>🎨 Pilih Tema</h3>
+    <p>Ganti suasana visual ECLIPSE AU kapan saja.</p>
+    <div class="grid">
+      <button onclick="setTheme('eclipse')">🌌 Eclipse Aesthetic</button>
+      <button onclick="setTheme('dark')">🖤 Dark Fantasy</button>
+      <button onclick="setTheme('anime')">🌸 Anime Aesthetic</button>
+      <button onclick="setTheme('royal')">👑 Royal Chinese Fantasy</button>
+    </div>
+  </div>
+  <div class="card" style="margin-top:15px">
+    <h3>💾 Cadangan Data</h3>
+    <p>Ekspor karya ke file JSON agar bisa disimpan atau dipindahkan.</p>
+    <button class="primary" onclick="exportData()">Ekspor Data</button>
+    <p>Impor cadangan JSON dari perangkat.</p>
+    <input type="file" id="importFile" accept=".json,application/json">
+    <button onclick="importData()">Impor Data</button>
+  </div>
+  <div class="card" style="margin-top:15px">
+    <h3>ℹ️ Tentang ECLIPSE AU</h3>
+    <p>Studio kreatif untuk AU, karakter, dunia, cerita, dan roleplay.</p>
+    <p class="note">Versi awal. AI, akun, sinkronisasi cloud, dan tautan berbagi belum diaktifkan.</p>
+  </div>
+</section>
+
+<footer>ECLIPSE AU · Your imagination, infinite universes ✦</footer>
+</main>
+</div>
+
 <script>
-const KEY='eclipse-au-v1';let db=load();let deferredPrompt=null;function load(){try{return JSON.parse(localStorage.getItem(KEY))||{universes:[],characters:[],stories:[],chats:{},settings:{theme:'eclipse',language:'id',ai:{}}}}catch{return {universes:[],characters:[],stories:[],chats:{},settings:{theme:'eclipse',language:'id',ai:{}}}}}function save(){localStorage.setItem(KEY,JSON.stringify(db));render()}function id(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function go(page){document.querySelectorAll('.page').forEach(p=>p.hidden=p.id!==page);document.querySelectorAll('[data-go]').forEach(b=>b.classList.toggle('active',b.dataset.go===page));window.scrollTo({top:0,behavior:'smooth'})}document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));document.getElementById('quickNew').onclick=()=>go('universes');
-document.getElementById('auForm').onsubmit=e=>{e.preventDefault();let f=new FormData(e.target);db.universes.unshift({id:id(),name:f.get('name').trim(),genre:f.get('genre'),description:f.get('description'),privacy:f.get('privacy'),created:new Date().toISOString()});e.target.reset();save();go('universes')};document.getElementById('charForm').onsubmit=e=>{e.preventDefault();let f=new FormData(e.target);db.characters.unshift({id:id(),name:f.get('name').trim(),mbti:f.get('mbti'),age:f.get('age'),universe:f.get('universe'),appearance:f.get('appearance'),personality:f.get('personality'),background:f.get('background')});e.target.reset();save()};document.getElementById('storyForm').onsubmit=e=>{e.preventDefault();let f=new FormData(e.target);db.stories.unshift({id:id(),title:f.get('title').trim(),universe:f.get('universe'),character:f.get('character'),content:f.get('content'),choices:f.get('choices').split('\n').map(x=>x.trim()).filter(Boolean),updated:new Date().toISOString()});e.target.reset();save()};
-function del(type,key){if(confirm('Hapus item ini?')){db[type]=db[type].filter(x=>x.id!==key);save()}}function render(){document.body.dataset.theme=db.settings.theme||'eclipse';document.getElementById('countAu').textContent=db.universes.length+' AU';document.getElementById('countChar').textContent=db.characters.length+' karakter';document.getElementById('countStory').textContent=db.stories.length+' naskah';document.getElementById('recentAu').innerHTML=db.universes.slice(0,3).map(a=>`<div class="card"><span class="pill">${esc(a.genre)}</span><h3>${esc(a.name)}</h3><p class="muted">${esc(a.description||'Belum ada deskripsi')}</p><button data-open="universes">Buka</button></div>`).join('')||'<div class="empty">AU pertamamu menunggu untuk dibuat ✨</div>';document.getElementById('auList').innerHTML=db.universes.map(a=>`<article class="card"><span class="pill">${esc(a.genre)} · ${esc(a.privacy)}</span><h3>${esc(a.name)}</h3><p class="muted">${esc(a.description||'Belum ada deskripsi')}</p><div class="row"><button data-use-au="${a.id}">Pilih untuk karakter/naskah</button><button class="danger" data-del-au="${a.id}">Hapus</button></div></article>`).join('')||'<div class="empty">Belum ada universe.</div>';document.getElementById('charList').innerHTML=db.characters.map(c=>`<article class="card"><span class="pill">${esc(c.mbti)} · ${esc(c.age||'Usia ?')}</span><h3>${esc(c.name)}</h3><p class="muted">${esc(c.universe?db.universes.find(a=>a.id===c.universe)?.name||'Universe dihapus':'Tanpa universe')}</p><p>${esc(c.personality||'Belum ada deskripsi kepribadian')}</p><details><summary>Profil lengkap</summary><p><b>Penampilan:</b> ${esc(c.appearance||'-')}</p><p><b>Latar belakang:</b> ${esc(c.background||'-')}</p></details><div class="row"><button data-chat-char="${c.id}">Buka chat demo</button><button class="danger" data-del-char="${c.id}">Hapus</button></div></article>`).join('')||'<div class="empty">Belum ada karakter. Ciptakan tokoh pertamamu.</div>';document.getElementById('storyList').innerHTML=db.stories.map(s=>`<article class="card"><h3>${esc(s.title)}</h3><p class="muted">${esc(db.universes.find(a=>a.id===s.universe)?.name||'Tanpa universe')}</p><p>${esc((s.content||'').slice(0,220))}${(s.content||'').length>220?'…':''}</p>${s.choices.length?'<p class="note">Pilihan: '+s.choices.map(esc).join(' · ')+'</p>':''}<div class="row"><button data-edit-story="${s.id}">Muat ke editor</button><button class="danger" data-del-story="${s.id}">Hapus</button></div></article>`).join('')||'<div class="empty">Naskahmu akan muncul di sini.</div>';for(let id of ['charUniverse','storyUniverse']){let el=document.getElementById(id),v=el.value;el.innerHTML='<option value="">— Tanpa universe —</option>'+db.universes.map(a=>`<option value="${a.id}">${esc(a.name)}</option>`).join('');el.value=v}for(let id of ['storyCharacter','chatCharacter']){let el=document.getElementById(id),v=el.value;el.innerHTML='<option value="">— Pilih karakter —</option>'+db.characters.map(c=>`<option value="${c.id}">${esc(c.name)} (${esc(c.mbti)})</option>`).join('');el.value=v}document.getElementById('language').value=db.settings.language||'id';document.getElementById('aiStatus').textContent=db.settings.ai?.endpoint?'Konfigurasi tersimpan untuk '+(db.settings.ai.model||'model belum diisi')+'. Belum ada koneksi AI aktif.':'Belum ada konfigurasi endpoint.';renderChat()}
-document.addEventListener('click',e=>{let b=e.target.closest('button');if(!b)return;if(b.dataset.delAu)del('universes',b.dataset.delAu);if(b.dataset.delChar)del('characters',b.dataset.delChar);if(b.dataset.delStory)del('stories',b.dataset.delStory);if(b.dataset.chatChar){go('chat');document.getElementById('chatCharacter').value=b.dataset.chatChar;renderChat()}if(b.dataset.useAu){document.getElementById('charUniverse').value=b.dataset.useAu;document.getElementById('storyUniverse').value=b.dataset.useAu;alert('Universe dipilih untuk formulir karakter dan naskah.')}if(b.dataset.editStory){let s=db.stories.find(x=>x.id===b.dataset.editStory),f=document.getElementById('storyForm');f.title.value=s.title;f.universe.value=s.universe;f.character.value=s.character;f.content.value=s.content;f.choices.value=s.choices.join('\n');db.stories=db.stories.filter(x=>x.id!==s.id);save();go('stories')}if(b.dataset.themeSet){db.settings.theme=b.dataset.themeSet;save()} });
-document.getElementById('importBtn').onclick=()=>{try{let arr=JSON.parse(document.getElementById('importJson').value);if(!Array.isArray(arr))throw Error('Data harus berupa array JSON.');let valid=arr.filter(c=>c&&typeof c.name==='string'&&c.name.trim()).map(c=>({id:id(),name:c.name,mbti:c.mbti||'Belum ditentukan',age:c.age||'',universe:'',appearance:c.appearance||'',personality:c.personality||'',background:c.background||''}));db.characters.unshift(...valid);save();document.getElementById('importJson').value='';alert(valid.length+' karakter berhasil diimpor.')}catch(err){alert('JSON belum valid: '+err.message)}};function download(data,name){let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();URL.revokeObjectURL(a.href)}document.getElementById('exportBtn').onclick=()=>download(db,'eclipse-au-export.json');document.getElementById('backupBtn').onclick=()=>download(db,'eclipse-au-backup.json');document.getElementById('fileJson').onchange=async e=>{try{let arr=JSON.parse(await e.target.files[0].text());if(!Array.isArray(arr))throw Error('JSON harus berupa array');db.characters.unshift(...arr.filter(c=>c.name).map(c=>({...c,id:id(),universe:''})));save();alert('Impor berhasil')}catch(err){alert(err.message)}e.target.value=''};document.getElementById('restoreFile').onchange=async e=>{try{let d=JSON.parse(await e.target.files[0].text());if(!d||!Array.isArray(d.universes)||!Array.isArray(d.characters)||!Array.isArray(d.stories))throw Error('Format cadangan tidak sesuai');if(confirm('Pulihkan cadangan? Data saat ini akan diganti.')){db=d;save();alert('Cadangan dipulihkan')}}catch(err){alert(err.message)}e.target.value=''};document.getElementById('language').onchange=e=>{db.settings.language=e.target.value;save();alert(e.target.value==='en'?'Language preference saved. Some labels remain Indonesian in this prototype.':'Preferensi bahasa disimpan. Beberapa label masih berbahasa Indonesia pada prototipe ini.')};document.getElementById('deleteAll').onclick=()=>{if(confirm('Yakin ingin menghapus semua AU, karakter, naskah, dan chat lokal? Ekspor cadangan terlebih dahulu jika perlu.')){localStorage.removeItem(KEY);db=load();save()}};document.getElementById('aiForm').onsubmit=e=>{e.preventDefault();let f=new FormData(e.target);db.settings.ai={provider:f.get('provider'),endpoint:f.get('endpoint'),model:f.get('model')};save();alert('Konfigurasi disimpan. Belum ada koneksi AI aktif. Jangan letakkan API key di website publik.')};
-function renderChat(){let cid=document.getElementById('chatCharacter').value,box=document.getElementById('chatbox');if(!cid){box.innerHTML='<p class="muted">Pilih karakter lalu mulai menulis pesan.</p>';return}let c=db.characters.find(x=>x.id===cid),arr=db.chats[cid]||[];box.innerHTML=arr.map(m=>`<div class="bubble ${m.role==='me'?'me':''}"><b>${m.role==='me'?'Kamu':esc(c?.name||'Karakter')}</b><br>${esc(m.text)}</div>`).join('')||`<p class="muted">Percakapan baru dengan ${esc(c?.name||'karakter')}.</p>`;box.scrollTop=box.scrollHeight}document.getElementById('chatCharacter').onchange=renderChat;document.getElementById('chatForm').onsubmit=e=>{e.preventDefault();let cid=document.getElementById('chatCharacter').value,input=document.getElementById('chatInput'),msg=input.value.trim();if(!cid){alert('Pilih karakter terlebih dahulu.');return}if(!msg)return;db.chats[cid]=db.chats[cid]||[];db.chats[cid].push({role:'me',text:msg});db.chats[cid].push({role:'system',text:'[DEMO] Ini prototipe lokal; belum ada model AI yang menghasilkan balasan. Sambungkan backend AI untuk respons karakter sungguhan.'});input.value='';save()};document.getElementById('clearChat').onclick=()=>{let cid=document.getElementById('chatCharacter').value;if(cid&&confirm('Bersihkan chat karakter ini?')){delete db.chats[cid];save()}};window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e});document.getElementById('installBtn').onclick=async()=>{if(deferredPrompt){deferredPrompt.prompt();deferredPrompt=null}else alert('Untuk sekarang, buka menu browser Chrome lalu pilih “Tambahkan ke layar utama”. Agar pemasangan PWA lengkap, website perlu di-host melalui HTTPS dan ditambahkan manifest/service worker.')};if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});render();
-</script></body></html>
+const STORE_KEY = "eclipse_au_data_v1";
+
+const defaults = {
+  theme: "eclipse",
+  characters: [],
+  worlds: [],
+  stories: [],
+  chats: [],
+  roleplays: []
+};
+
+let data = loadData();
+
+function loadData() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE_KEY));
+    return saved ? {...defaults, ...saved} : {...defaults};
+  } catch {
+    return {...defaults};
+  }
+}
+
+function saveData() {
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify(data));
+    return true;
+  } catch (error) {
+    alert("Penyimpanan browser penuh atau tidak tersedia. Ekspor data sebagai cadangan.");
+    return false;
+  }
+}
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  })[char]);
+}
+
+function showSection(id) {
+  document.querySelectorAll(".section").forEach(section => {
+    section.classList.toggle("active", section.id === id);
+  });
+
+  document.querySelectorAll(".nav-button").forEach(button => {
+    button.classList.toggle("active", button.dataset.page === id);
+  });
+
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+const themes = {
+  eclipse: {
+    bg:"#100b18", panel:"#1d1428", text:"#f7efff",
+    muted:"#b9a9ca", accent:"#b69aff", border:"#49365f"
+  },
+  dark: {
+    bg:"#100b0e", panel:"#25151d", text:"#fff0f3",
+    muted:"#d1aeb8", accent:"#df789b", border:"#633248"
+  },
+  anime: {
+    bg:"#fff5fb", panel:"#ffffff", text:"#49384e",
+    muted:"#8d778f", accent:"#d78fc7", border:"#edc8e6"
+  },
+  royal: {
+    bg:"#230c1c", panel:"#391224", text:"#fff0d1",
+    muted:"#dfc4bd", accent:"#e9bd62", border:"#8d4c54"
+  }
+};
+
+function setTheme(name) {
+  if (!themes[name]) return;
+  data.theme = name;
+  const theme = themes[name];
+
+  Object.entries(theme).forEach(([key,value]) => {
+    document.documentElement.style.setProperty("--" + key, value);
+  });
+
+  saveData();
+}
+
+function makeItem(title, details, onDelete) {
+  const div = document.createElement("div");
+  div.className = "item";
+
+  const heading = document.createElement("strong");
+  heading.textContent = title;
+  div.appendChild(heading);
+
+  const body = document.createElement("p");
+  body.textContent = details;
+  div.appendChild(body);
+
+  const button = document.createElement("button");
+  button.textContent = "Hapus";
+  button.className = "secondary";
+  button.addEventListener("click", onDelete);
+  div.appendChild(button);
+
+  return div;
+}
+
+function renderList(elementId, items, formatter, onDelete) {
+  const container = document.getElementById(elementId);
+  container.replaceChildren();
+
+  if (!items.length) {
+    const empty = document.createElement("p");
+    empty.className = "empty";
+    empty.textContent = "Belum ada karya. Mulai buat sesuatu!";
+    container.appendChild(empty);
+    return;
+  }
+
+  items.forEach((item,index) => {
+    const formatted = formatter(item);
+    container.appendChild(makeItem(
+      formatted.title,
+      formatted.details,
+      () => {
+        if (!confirm("Hapus item ini?")) return;
+        onDelete(index);
+        saveData();
+        renderAll();
+      }
+    ));
+  });
+}
+
+function renderAll() {
+  renderList("characterList", data.characters, item => ({
+    title: item.name,
+    details: [
+      item.age && "Usia: " + item.age,
+      item.type && "Kepribadian: " + item.type,
+      item.appearance && "Penampilan: " + item.appearance,
+      item.bio && "Latar belakang: " + item.bio
+    ].filter(Boolean).join("\n")
+  }), index => data.characters.splice(index,1));
+
+  renderList("worldList", data.worlds, item => ({
+    title: item.name,
+    details: "Genre: " + item.genre + "\n" + item.description
+  }), index => data.worlds.splice(index,1));
+
+  renderList("storyList", data.stories, item => ({
+    title: item.title,
+    details: (item.world ? "Dunia: " + item.world + "\n" : "") + item.content
+  }), index => data.stories.splice(index,1));
+
+  renderList("chatList", data.chats, item => ({
+    title: item.character,
+    details: item.prompt
+  }), index => data.chats.splice(index,1));
+
+  renderList("roleplayList", data.roleplays, item => ({
+    title: item.title,
+    details: "Karakter: " + item.characters + "\n" + item.scene
+  }), index => data.roleplays.splice(index,1));
+
+  const select = document.getElementById("chatCharacter");
+  const previous = select.value;
+  select.replaceChildren();
+
+  if (!data.characters.length) {
+    const option = document.createElement("option");
+    option.value = "";
+    option.textContent = "Buat karakter terlebih dahulu";
+    select.appendChild(option);
+  } else {
+    data.characters.forEach(character => {
+      const option = document.createElement("option");
+      option.value = character.name;
+      option.textContent = character.name;
+      select.appendChild(option);
+    });
+    if (data.characters.some(c => c.name === previous)) {
+      select.value = previous;
+    }
+  }
+}
+
+document.getElementById("characterForm").addEventListener("submit", event => {
+  event.preventDefault();
+  data.characters.push({
+    name: document.getElementById("charName").value.trim(),
+    age: document.getElementById("charAge").value.trim(),
+    type: document.getElementById("charType").value.trim(),
+    appearance: document.getElementById("charAppearance").value.trim(),
+    bio: document.getElementById("charBio").value.trim()
+  });
+  saveData();
+  event.target.reset();
+  renderAll();
+  alert("Karakter disimpan!");
+});
+
+document.getElementById("worldForm").addEventListener("submit", event => {
+  event.preventDefault();
+  data.worlds.push({
+    name: document.getElementById("worldName").value.trim(),
+    genre: document.getElementById("worldGenre").value,
+    description: document.getElementById("worldDesc").value.trim()
+  });
+  saveData();
+  event.target.reset();
+  renderAll();
+  alert("Dunia AU disimpan!");
+});
+
+document.getElementById("storyForm").addEventListener("submit", event => {
+  event.preventDefault();
+  data.stories.push({
+    title: document.getElementById("storyTitle").value.trim(),
+    world: document.getElementById("storyWorld").value.trim(),
+    content: document.getElementById("storyContent").value
+  });
+  saveData();
+  event.target.reset();
+  renderAll();
+  alert("Cerita disimpan!");
+});
+
+document.getElementById("roleplayForm").addEventListener("submit", event => {
+  event.preventDefault();
+  data.roleplays.push({
+    title: document.getElementById("rpTitle").value.trim(),
+    characters: document.getElementById("rpCharacters").value.trim(),
+    scene: document.getElementById("rpScene").value
+  });
+  saveData();
+  event.target.reset();
+  renderAll();
+  alert("Roleplay disimpan!");
+});
+
+function saveChatPrompt() {
+  const prompt = document.getElementById("chatPrompt").value.trim();
+  if (!prompt) {
+    alert("Tulis pesan atau adegan terlebih dahulu.");
+    return;
+  }
+  data.chats.push({
+    character: document.getElementById("chatCharacter").value || "Belum ada karakter",
+    prompt
+  });
+  saveData();
+  document.getElementById("chatPrompt").value = "";
+  renderAll();
+  alert("Adegan tersimpan. AI belum aktif pada versi ini.");
+}
+
+document.getElementById("mediaFiles").addEventListener("change", event => {
+  const preview = document.getElementById("mediaPreview");
+  preview.replaceChildren();
+
+  Array.from(event.target.files || []).forEach(file => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const title = document.createElement("p");
+    title.textContent = file.name;
+    card.appendChild(title);
+
+    const url = URL.createObjectURL(file);
+    let element;
+
+    if (file.type.startsWith("image/")) {
+      element = document.createElement("img");
+      element.style.width = "100%";
+      element.style.borderRadius = "10px";
+      element.alt = file.name;
+      element.src = url;
+    } else if (file.type.startsWith("audio/")) {
+      element = document.createElement("audio");
+      element.controls = true;
+      element.src = url;
+      element.style.width = "100%";
+    } else if (file.type.startsWith("video/")) {
+      element = document.createElement("video");
+      element.controls = true;
+      element.src = url;
+      element.style.width = "100%";
+    }
+
+    if (element) card.appendChild(element);
+    preview.appendChild(card);
+  });
+});
+
+function exportData() {
+  const blob = new Blob([JSON.stringify(data,null,2)], {
+    type:"application/json"
+  });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "eclipse-au-backup.json";
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url),1000);
+}
+
+function importData() {
+  const file = document.getElementById("importFile").files[0];
+  if (!file) {
+    alert("Pilih file cadangan JSON terlebih dahulu.");
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const imported = JSON.parse(reader.result);
+      const valid = imported &&
+        Array.isArray(imported.characters) &&
+        Array.isArray(imported.worlds) &&
+        Array.isArray(imported.stories) &&
+        Array.isArray(imported.chats) &&
+        Array.isArray(imported.roleplays);
+
+      if (!valid) throw new Error("Format cadangan tidak sesuai.");
+
+      if (!confirm("Impor akan mengganti data ECLIPSE AU saat ini. Lanjutkan?")) return;
+
+      data = {...defaults,...imported};
+      saveData();
+      setTheme(data.theme);
+      renderAll();
+      alert("Cadangan berhasil diimpor.");
+    } catch {
+      alert("File tidak valid atau bukan cadangan ECLIPSE AU.");
+    }
+  };
+  reader.readAsText(file);
+}
+
+setTheme(data.theme);
+renderAll();
+</script>
+</body>
+  </html>
